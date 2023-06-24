@@ -1,17 +1,25 @@
+body {
+    font-size: 1.5rem;
+}
+
 html, body {
     height: 100%;
     margin: 0;
+    
 }
 
 #wrapper {
     display: flex;
     height: 100%;
+    
 }
 
 #movies {
     flex: 1;
+    font-size: 5rem;
 }
 
 #games {
     flex: 1;
+    font-size: 5rem;
 }
