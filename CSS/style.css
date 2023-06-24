@@ -18,11 +18,13 @@ body {
 #movies {
   flex: 1;
   font-size: 5rem;
+  border: none;
 }
 
 #games {
   flex: 1;
   font-size: 5rem;
+  border: none;
 }
 
 #god-of-war {
