@@ -84,12 +84,12 @@ body {
 }
 
 #movies:hover #movies-text {
-  transition: .6s ease-in-out;
+  transition: 0.6s ease-in-out;
   opacity: 1;
 }
 
 #games:hover #games-text {
-  transition: .6s ease-in-out;
+  transition: 0.6s ease-in-out;
   opacity: 1;
 }
 
@@ -99,21 +99,21 @@ body {
 
 #wrapper :hover #games-text {
   opacity: 1;
-} 
+}
 
- #dark-knight:hover{
+#dark-knight:hover {
   filter: grayscale(0);
   opacity: 1;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 #senua:hover {
   filter: grayscale(0);
   opacity: 1;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
-#my-video {
+#video1 {
   width: 100%;
   height: 100%;
 }

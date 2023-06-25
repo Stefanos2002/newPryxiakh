@@ -1,6 +1,6 @@
-const video = document.getElementById("my-video");
-const poster = document.getElementById("dark-knight");
-const videoContainer = document.getElementById("movies");
+const video = document.getElementById("video1");
+const poster = document.getElementById("senua");
+const videoContainer = document.getElementById("games");
 
 videoContainer.addEventListener("mouseenter", function () {
   video.play();
