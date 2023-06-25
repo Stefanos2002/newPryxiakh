@@ -93,21 +93,7 @@ body {
   opacity: 1;
 }
 
-#wrapper :hover #movies-text {
-  opacity: 1;
-}
-
-#wrapper :hover #games-text {
-  opacity: 1;
-}
-
-#dark-knight:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  transition: 0.4s ease-in-out;
-}
-
-#senua:hover {
+#senua:hover, #dark-knight:hover {
   filter: grayscale(0);
   opacity: 1;
   transition: 0.4s ease-in-out;
