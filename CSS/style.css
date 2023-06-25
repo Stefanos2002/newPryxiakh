@@ -114,6 +114,8 @@ body {
 }
 
 #video1 {
-  width: 100%;
+  position: absolute;
+  width: 50%;
   height: 100%;
+  z-index: 1;
 }
