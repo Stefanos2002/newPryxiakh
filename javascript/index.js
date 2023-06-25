@@ -1,4 +1,3 @@
-const button = document.getElementById("games");
 const darkKnight = document.getElementById("dark-knight");
 const Senua = document.getElementById("senua");
 
