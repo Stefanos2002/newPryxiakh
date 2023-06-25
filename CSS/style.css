@@ -82,11 +82,13 @@ body {
   left: 25%;
 }
 
-#movies :hover #movies-text {
+#movies:hover #movies-text {
+  transition: .6s ease-in-out;
   opacity: 1;
 }
 
-#games :hover #games-text {
+#games:hover #games-text {
+  transition: .6s ease-in-out;
   opacity: 1;
 }
 
@@ -106,7 +108,7 @@ body {
 
 #wrapper :hover #games-text {
   opacity: 1;
-}
+} 
 
  #dark-knight:hover{
   filter: grayscale(0);
