@@ -22,7 +22,6 @@ body {
 #dark-knight {
   background: none;
   filter: grayscale(100%);
-  transition: .4s ease-in-out;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -31,7 +30,9 @@ body {
   display: block;
   object-fit: cover;
   margin: 0;
+  opacity: 0.5;
   padding: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 #movies,
@@ -102,10 +103,17 @@ body {
 
  #dark-knight:hover{
   filter: grayscale(0);
+  opacity: 1;
   transition: .4s ease-in-out;
 }
 
 #senua:hover {
   filter: grayscale(0);
+  opacity: 1;
   transition: .4s ease-in-out;
+}
+
+#my-video {
+  width: 100%;
+  height: 100%;
 }
