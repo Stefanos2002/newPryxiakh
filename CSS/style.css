@@ -21,6 +21,8 @@ body {
 #senua,
 #dark-knight {
   background: none;
+  filter: grayscale(100%);
+  transition: .4s ease-in-out;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -104,4 +106,14 @@ body {
 
 #wrapper :hover #games-text {
   opacity: 1;
+}
+
+ #dark-knight:hover{
+  filter: grayscale(0);
+  transition: .4s ease-in-out;
+}
+
+#senua:hover {
+  filter: grayscale(0);
+  transition: .4s ease-in-out;
 }
