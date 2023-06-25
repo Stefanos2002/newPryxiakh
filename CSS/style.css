@@ -92,16 +92,6 @@ body {
   opacity: 1;
 }
 
-#dark-knight {
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
-#senua {
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
 #wrapper :hover #movies-text {
   opacity: 1;
 }
