@@ -5,7 +5,7 @@ const clip = document.querySelectorAll(".clip");
 let isPlaying = false;
 
 poster.addEventListener('mouseenter', () => {
-  poster.style.transition = '0.3s ease-in-out'
+  poster.style.transition = '0.5s ease-in-out'
   poster.style.visibility = 'hidden'
   for (let i = 0; i < clip.length; i++) {
     clip[i].addEventListener("mouseenter", () => {
