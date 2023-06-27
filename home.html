@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CSS/style.css" />
-    <title>Home</title>
-  </head>
 
-  <body>
-    <div id="wrapper">
-      <div id="movies">
-        <img src="/images/batman.jpg" id="dark-knight" alt="The_Dark_Knight" />
-        <p id="movies-text">Movies</p>
-      </div>
-      <div id="games">
-        <video class="clip" id="video1" loop>
-          <source src="/videos/_It's Just a Game_.mp4" type="video/mp4" />
-        </video>
-        <p id="games-text">Games</p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/CSS/style.css" />
+  <title>Home</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="movies">
+      <img src="/images/batman.jpg" id="dark-knight" alt="The_Dark_Knight" />
+      <p id="movies-text">Movies</p>
     </div>
-    <script src="/javascript/index.js"></script>
-  </body>
+    <div id="games">
+      <div class="image-container">
+        <img src="/images/senua.jpg" alt="hellblade" class="senua">
+      </div>
+      <video class="clip" id="video1" loop>
+        <source src="/videos/_It's Just a Game_.mp4" type="video/mp4" />
+      </video>
+      <p id="games-text">Games</p>
+    </div>
+  </div>
+  <script src="/javascript/index.js"></script>
+</body>
+
 </html>
