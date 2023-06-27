@@ -1,26 +1,21 @@
 const video = document.getElementById("video1");
 const poster = document.getElementById("senua");
 const videoContainer = document.getElementById("games");
-const clip = document.querySelectorAll("clip");
-
-videoContainer.addEventListener("mouseenter", function () {
-  setTimeout(function () {
-    video.play();
-  }, 650);
-  video.volume = 0.1;
-  poster.style.display = "none";
-});
-
-videoContainer.addEventListener("mouseleave", function () {
-  video.pause();
-  poster.style.display = "block";
-});
+const clip = document.querySelectorAll(".clip");
+let isPlaying = false;
 
 for (let i = 0; i < clip.length; i++) {
   clip[i].addEventListener("mouseenter", () => {
-    clip[i].play();
+    isPlaying = true;
+    setTimeout(function() {
+      if(isPlaying === true)
+        clip[i].play();
+    }, 650);
+    clip[i].volume = 0.1;
   });
+
   clip[i].addEventListener("mouseleave", () => {
+    isPlaying = false;
     clip[i].pause();
   });
 }
