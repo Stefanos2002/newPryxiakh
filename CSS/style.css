@@ -84,7 +84,6 @@ body {
 #games #games-text {
   top: 50%;
   left: 50%;
-  /* this is a comment */
 }
 
 #movies-text {
@@ -102,18 +101,18 @@ body {
   opacity: 1;
 }
 
-#senua:hover,
-#dark-knight:hover {
-  filter: grayscale(0);
-  opacity: 1;
-  transition: 0.4s ease-in-out;
-}
-
 #movies:hover,
 #games:hover {
   filter: grayscale(0);
   cursor: pointer;
   transition: 0.4s ease-in-out;
+}
+
+#movies,
+#games:not(:hover) {
+  filter: grayscale(1);
+  cursor: pointer;
+  transition: 0.6s ease-in-out;
 }
 
 #video1 {

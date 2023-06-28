@@ -2,6 +2,7 @@ const video = document.getElementById("video1");
 const senuaPoster = document.querySelector(".senua");
 const batmanPoster = document.getElementById("dark-knight");
 const videoContainer = document.getElementById("games");
+const gamesText = document.getElementById("games-text");
 const clip = document.querySelectorAll(".clip");
 let isPlaying = false;
 console.log(isPlaying);
@@ -16,18 +17,23 @@ batmanPoster.addEventListener("mouseenter", () => {
 
 //Function gia ton elegxo tou hover stis eikones
 function handleMouseEnter(poster) {
-  poster.style.transition = "0.8s ease-in-out";
-  poster.style.visibility = "hidden";
+  poster.style.transition = "1s ease-in-out";
+  setTimeout(() => {
+    poster.style.opacity = "0";
+    poster.style.pointerEvents = "none";
+  }, 650);
+
+  gamesText.onmouseover = () => video.play(); //auto vazei to text xwris delay
 
   for (let i = 0; i < clip.length; i++) {
-    clip[i].addEventListener("mouseenter", () => {
+    clip[i].addEventListener("mouseover", () => {
       isPlaying = true;
       console.log(isPlaying);
       setTimeout(function () {
         if (isPlaying === true) {
           clip[i].play();
         }
-      }, 650);
+      }, 750);
     });
 
     clip[i].addEventListener("mouseleave", () => {
