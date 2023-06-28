@@ -28,7 +28,7 @@ function handleMouseEnter(poster) {
           clip[i].play();
         }
       }, 650);
-      clip[i].volume = 1;
+      clip[i].volume = 0.1;
     });
 
     clip[i].addEventListener("mouseleave", () => {
