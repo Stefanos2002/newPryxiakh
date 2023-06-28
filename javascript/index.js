@@ -28,7 +28,6 @@ function handleMouseEnter(poster) {
           clip[i].play();
         }
       }, 650);
-      clip[i].volume = 0.5;
     });
 
     clip[i].addEventListener("mouseleave", () => {
