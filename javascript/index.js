@@ -24,16 +24,21 @@ function handleMouseEnter(poster) {
   }, 650);
 
   for (let i = 0; i < clip.length; i++) {
+    let isMouseOver = false;
+    let hoverTimeout;
+
     clip[i].addEventListener("mouseover", () => {
-      isPlaying = true;
+      isMouseOver = true;
       setTimeout(function () {
-        if (isPlaying === true) 
+        if (isMouseOver === true) {
           clip[i].play();
-      }, 750);
+        }
+      }, 450);
     });
 
     clip[i].addEventListener("mouseleave", () => {
-      isPlaying = false;
+      isMouseOver = false;
+      clearTimeout(hoverTimeout);
       clip[i].pause();
     });
   }
