@@ -92,12 +92,12 @@ body {
 }
 
 #movies:hover #movies-text {
-  transition: 0.6s ease-in-out;
+  transition: 0.9s ease-in-out;
   opacity: 1;
 }
 
 #games:hover #games-text {
-  transition: 0.6s ease-in-out;
+  transition: 0.9s ease-in-out;
   opacity: 1;
 }
 
@@ -115,7 +115,7 @@ body {
   transition: 0.6s ease-in-out;
 }
 
-#video1 {
+.clip {
   position: absolute;
   top: 0;
   right: 0;
