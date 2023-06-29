@@ -1,8 +1,8 @@
-const video = document.getElementById("video1");
 const senuaPoster = document.querySelector(".senua");
-const batmanPoster = document.getElementById("dark-knight");
+const batmanPoster = document.querySelector(".dark-knight");
 const videoContainer = document.getElementById("games");
 const gamesText = document.getElementById("games-text");
+const moviesText = document.getElementById("movies-text");
 const clip = document.querySelectorAll(".clip");
 let isPlaying = false;
 console.log(isPlaying);
@@ -22,8 +22,6 @@ function handleMouseEnter(poster) {
     poster.style.opacity = "0";
     poster.style.pointerEvents = "none";
   }, 650);
-
-  gamesText.onmouseover = () => video.play(); //auto vazei to text xwris delay
 
   for (let i = 0; i < clip.length; i++) {
     clip[i].addEventListener("mouseover", () => {
