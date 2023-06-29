@@ -28,17 +28,14 @@ function handleMouseEnter(poster) {
   for (let i = 0; i < clip.length; i++) {
     clip[i].addEventListener("mouseover", () => {
       isPlaying = true;
-      console.log(isPlaying);
       setTimeout(function () {
-        if (isPlaying === true) {
+        if (isPlaying === true) 
           clip[i].play();
-        }
       }, 750);
     });
 
     clip[i].addEventListener("mouseleave", () => {
       isPlaying = false;
-      console.log(isPlaying);
       clip[i].pause();
     });
   }
