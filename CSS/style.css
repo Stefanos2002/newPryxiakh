@@ -24,23 +24,6 @@ body {
   overflow: hidden;
 }
 
-#senua,
-#dark-knight {
-  background: none;
-  filter: grayscale(100%);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  margin: 0;
-  opacity: 0.5;
-  padding: 0;
-  transition: transform 0.3s ease-in-out;
-}
-
 #movies,
 #games {
   flex: 1;
@@ -81,21 +64,13 @@ body {
   transition: opacity 0.3s ease;
 }
 
-#games #games-text {
+#movies-text,
+#games-text {
   top: 50%;
   left: 50%;
 }
 
-#movies-text {
-  top: 50%;
-  left: 50%;
-}
-
-#movies:hover #movies-text {
-  transition: 0.9s ease-in-out;
-  opacity: 1;
-}
-
+#movies:hover #movies-text,
 #games:hover #games-text {
   transition: 0.9s ease-in-out;
   opacity: 1;
@@ -117,8 +92,6 @@ body {
 
 .clip {
   position: absolute;
-  top: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
