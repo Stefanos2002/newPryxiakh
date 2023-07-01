@@ -1,11 +1,10 @@
+//HTML elements
 const senuaPoster = document.querySelector(".senua");
 const batmanPoster = document.querySelector(".dark-knight");
 const videoContainer = document.getElementById("games");
 const gamesText = document.getElementById("games-text");
 const moviesText = document.getElementById("movies-text");
 const clip = document.querySelectorAll(".clip");
-let isPlaying = false;
-console.log(isPlaying);
 
 senuaPoster.addEventListener("mouseenter", () => {
   handleMouseEnter(senuaPoster);
