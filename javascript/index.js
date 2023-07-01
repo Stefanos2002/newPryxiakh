@@ -33,7 +33,7 @@ function handleMouseEnter(poster) {
         if (isMouseOver === true) {
           clip[i].play();
         }
-      }, 450);
+      }, 530);
     });
 
     clip[i].addEventListener("mouseleave", () => {
