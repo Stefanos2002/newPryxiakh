@@ -32,7 +32,8 @@ function handleMouseEnter(poster) {
     
     
     clip[i].addEventListener("mouseover", () => {
-      clipText[i].onmouseover = () => clip[i].play();
+
+      clipText[i].onmouseover = () => clip[i].play(); //Gia na paizoun ta video sto hover sto text
       
       isMouseOver = true;
       setTimeout(function () {
