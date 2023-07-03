@@ -1,10 +1,13 @@
+/*TODO
+1) Na paizei to video sto hover sto text */
+
 //HTML elements
 const senuaPoster = document.querySelector(".senua");
 const batmanPoster = document.querySelector(".dark-knight");
 const videoContainer = document.getElementById("games");
-const gamesText = document.getElementById("games-text");
-const moviesText = document.getElementById("movies-text");
+const clipText = document.querySelectorAll('.clip-text')
 const clip = document.querySelectorAll(".clip");
+
 
 senuaPoster.addEventListener("mouseenter", () => {
   handleMouseEnter(senuaPoster);
@@ -22,11 +25,15 @@ function handleMouseEnter(poster) {
     poster.style.pointerEvents = "none";
   }, 650);
 
+  
   for (let i = 0; i < clip.length; i++) {
     let isMouseOver = false;
     let hoverTimeout;
-
+    
+    
     clip[i].addEventListener("mouseover", () => {
+      clipText[i].onmouseover = () => clip[i].play();
+      
       isMouseOver = true;
       setTimeout(function () {
         if (isMouseOver === true) {
