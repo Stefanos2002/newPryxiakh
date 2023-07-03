@@ -55,23 +55,18 @@ body {
   background-color: #88888832;
 } */
 
-#movies-text,
-#games-text {
+.clip-text {
   position: absolute;
   color: white;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-#movies-text,
-#games-text {
   top: 50%;
   left: 50%;
 }
 
-#movies:hover #movies-text,
-#games:hover #games-text {
+#movies:hover .clip-text,
+#games:hover .clip-text {
   transition: 0.9s ease-in-out;
   opacity: 1;
 }
@@ -87,7 +82,7 @@ body {
 #games:not(:hover) {
   filter: grayscale(1);
   cursor: pointer;
-  transition: 0.6s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .clip {

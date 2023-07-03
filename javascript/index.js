@@ -25,17 +25,29 @@ function handleMouseEnter(poster) {
     poster.style.pointerEvents = "none";
   }, 650);
 
-  
+
   for (let i = 0; i < clip.length; i++) {
     let isMouseOver = false;
     let hoverTimeout;
-    
-    
+
+
     clip[i].addEventListener("mouseover", () => {
 
-      clipText[i].onmouseover = () => clip[i].play(); //Gia na paizoun ta video sto hover sto text
-      
       isMouseOver = true;
+      clipText[i].onmouseover = () => {
+        clip[i].style.transition = '1s ease-in-out'
+
+        //DEN TELEIWSE AKOMA
+        setTimeout(() => {
+          if(isMouseOver === true) {
+
+            clip[i].play(); //Gia na paizoun ta video sto hover sto text
+          }
+          
+
+        }, 530)
+      }
+
       setTimeout(function () {
         if (isMouseOver === true) {
           clip[i].play();
