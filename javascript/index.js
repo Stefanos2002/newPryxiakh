@@ -43,12 +43,15 @@ function handleMouseEnter(poster) {
   }, 650);
 
 
+
   for (let i = 0; i < clip.length; i++) {
     let isMouseOver = false;
     let hoverTimeout;
 
 
+
     clip[i].addEventListener("mouseover", () => {
+
 
       isMouseOver = true;
       clipText[i].onmouseover = () => {
