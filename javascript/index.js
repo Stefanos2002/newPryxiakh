@@ -1,18 +1,15 @@
 /*TODO
-1) Na paizei to video sto hover sto text 
-2) Na mhn paizei to video sthn grigori enallagh apo poster se poster*/
+1) Na paizei to video sto hover sto text (fixed)
+2) Na mhn paizei to video sthn grigori enallagh apo poster se poster (fixed)*/
 
 //HTML elements
 const senuaPoster = document.querySelector(".senua");
 const batmanPoster = document.querySelector(".dark-knight");
-const clipText = document.querySelectorAll('.clip-text')
 const clip = document.querySelectorAll(".clip");
 const videoContainer = document.querySelectorAll(".video-container");
 
 //Metavlhtes
 let hoverImages;
-
-
 
 window.addEventListener('DOMContentLoaded', function () { //giati evgaze error sto poster.style.transition gia kapoio logo
   senuaPoster.addEventListener("mouseenter", () => {
@@ -49,21 +46,16 @@ window.addEventListener('DOMContentLoaded', function () { //giati evgaze error s
 
     for (let i = 0; i < videoContainer.length; i++) {
       let isMouseOver = false;
-      let hoverTimeout;
-
       videoContainer[i].addEventListener("mouseover", () => {
-
         isMouseOver = true;
-        setTimeout(function () {
-          if (isMouseOver === true) {
+        setTimeout(() => {
+          if (isMouseOver === true) 
             clip[i].play();
-          }
-        }, 530);
+        }, 525);
       });
 
       videoContainer[i].addEventListener("mouseleave", () => {
         isMouseOver = false;
-        clearTimeout(hoverTimeout);
         clip[i].pause();
       });
     }
