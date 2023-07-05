@@ -24,23 +24,6 @@ body {
   overflow: hidden;
 }
 
-#senua,
-#dark-knight {
-  background: none;
-  filter: grayscale(100%);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  margin: 0;
-  opacity: 0.5;
-  padding: 0;
-  transition: transform 0.3s ease-in-out;
-}
-
 #movies,
 #games {
   flex: 1;
@@ -55,7 +38,7 @@ body {
   margin: 0 auto;
   padding: 0;
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -70,33 +53,20 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #88888832;
-}
+} */
 
-#movies-text,
-#games-text {
+.clip-text {
   position: absolute;
   color: white;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-#games #games-text {
   top: 50%;
   left: 50%;
 }
 
-#movies-text {
-  top: 50%;
-  left: 50%;
-}
-
-#movies:hover #movies-text {
-  transition: 0.9s ease-in-out;
-  opacity: 1;
-}
-
-#games:hover #games-text {
+#movies:hover .clip-text,
+#games:hover .clip-text {
   transition: 0.9s ease-in-out;
   opacity: 1;
 }
@@ -112,13 +82,11 @@ body {
 #games:not(:hover) {
   filter: grayscale(1);
   cursor: pointer;
-  transition: 0.6s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .clip {
   position: absolute;
-  top: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
