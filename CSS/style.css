@@ -24,13 +24,22 @@ html, body {
 }
 
 .logos #xbox{
-
-}
-
-.logos #pc{
-
+    position: absolute;
+    max-width:30px;
+    top: 15px;
+    right:20%;
 }
 
 .logos #nintendo{
+    position: absolute;
+    max-width:36px;
+    top: 11px;
+    right:14.5%;
+}
 
+.logos #pc{
+    position: absolute;
+    max-width:25px;
+    top: 11px;
+    right:9.5%;
 }
