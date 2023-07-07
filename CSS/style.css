@@ -38,22 +38,6 @@ body {
   margin: 0 auto;
   padding: 0;
 }
-/* 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #88888832;
-}
-
-::-webkit-scrollbar-track:hover {
-  background-color: #88888832;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #88888832;
-} */
 
 .clip-text {
   position: absolute;
