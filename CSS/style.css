@@ -1,45 +1,88 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Games', sans-serif;
-    overflow-x: hidden;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Games", sans-serif;
+  overflow-x: hidden;
 }
 
-.container{
-    background-color:black;
+.container {
+  background-color: black;
 }
 
-#title{
-    position:relative;
-    color:whitesmoke;
-    font-size: 3rem;
+#title {
+  position: relative;
+  color: whitesmoke;
+  font-size: 3rem;
 }
 
-.logos #ps{
-    position: absolute;
-    max-width:34px;
-    top: 15px;
-    right:25%;
+.logos #ps {
+  position: absolute;
+  max-width: 34px;
+  top: 15px;
+  right: 25%;
 }
 
-.logos #xbox{
-    position: absolute;
-    max-width:30px;
-    top: 15px;
-    right:20%;
+.logos #xbox {
+  position: absolute;
+  max-width: 30px;
+  top: 15px;
+  right: 20%;
 }
 
-.logos #nintendo{
-    position: absolute;
-    max-width:36px;
-    top: 11px;
-    right:14.5%;
+.logos #nintendo {
+  position: absolute;
+  max-width: 36px;
+  top: 11px;
+  right: 14.5%;
 }
 
-.logos #pc{
-    position: absolute;
-    max-width:25px;
-    top: 11px;
-    right:9.5%;
+.logos #pc {
+  position: absolute;
+  max-width: 25px;
+  top: 11px;
+  right: 9.5%;
+}
+
+#sign {
+  position: absolute;
+  color: whitesmoke;
+  margin: 0;
+  top: 12px;
+  right: 2%;
+}
+
+#sign:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 14px;
+  left: 30%;
+}
+
+.search-bar #bar {
+  border-radius: 12px;
+  width: 30vw;
+  padding: 5px;
+}
+
+.search-bar #icon {
+  position: absolute;
+  padding: 0;
+  width: 30px;
+  right: 7px;
+  top: 4px;
+  filter: grayscale(0%);
+}
+
+.search-bar #icon:hover {
+  cursor: pointer;
+  transition: 1s;
+  filter: grayscale(100%);
 }
