@@ -1,8 +1,8 @@
 html,
 body {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
-  padding: 0;
   font-family: "Games", sans-serif;
   overflow-x: hidden;
 }
@@ -72,28 +72,65 @@ body {
   font-style: italic;
   border-radius: 15px;
   width: 35vw;
-  padding: 3px;
+  padding: 4px 2px 4px 22px;
   font-size: 18px;
+}
+
+.search-bar #bar:focus {
+  padding: 4px 2px 4px 22px;
+  width: 36.5vw;
 }
 
 .search-bar #controller-img {
   display: block;
   position: absolute;
   background-image: url("/images/Search.png");
-  background-size: contain;
+  background-size: 30px;
   background-repeat: no-repeat;
-  transition: lightgrey 0.3;
   background-position: center;
-  border-radius: 12px;
-  width: 33px;
-  height: 33px;
-  right: 5px;
+  border-radius: 15px;
+  width: 32px;
+  height: 32px;
+  right: 10px;
   padding: 0;
-  top: -2px;
+  top: 0;
 }
 
+.search-bar #bar:focus + #controller-img {
+  right: 33px; /* Adjusted background-position */
+}
+
+.search-bar input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
 .search-bar #controller-img:hover {
   transition: 0.3s ease-in-out;
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: #e8e8e8;
+}
+
+.search-bar #xmen {
+  position: absolute;
+  background-image: url("/images/Xicon.png");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s;
+  background-position: center;
+  border-radius: 16px;
+  width: 32px;
+  height: 32px;
+  left: 427px;
+  padding: 0;
+  top: 0;
+  visibility: hidden;
+}
+
+.search-bar #bar:focus + #xmen {
+  visibility: visible;
+}
+
+.search-bar #xmen:hover {
+  background-color: yellow;
+  border-radius: 15px;
+  cursor: pointer;
 }
