@@ -24,7 +24,16 @@ body {
   right: 25%;
 }
 
-.logos:hover {
+.logos #ps:hover {
+  transform: scale(1.3);
+}
+
+.logos img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.logos:hover img {
   cursor: pointer;
 }
 
@@ -35,6 +44,10 @@ body {
   right: 20%;
 }
 
+.logos #xbox:hover {
+  transform: scale(1.3);
+}
+
 .logos #nintendo {
   position: absolute;
   max-width: 36px;
@@ -42,11 +55,19 @@ body {
   right: 14.5%;
 }
 
+.logos #nintendo:hover {
+  transform: scale(1.3);
+}
+
 .logos #pc {
   position: absolute;
   max-width: 25px;
   top: 11px;
   right: 9.5%;
+}
+
+.logos #pc:hover {
+  transform: scale(1.3);
 }
 
 #sign {
@@ -57,8 +78,22 @@ body {
   right: 2%;
 }
 
+#sign::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: whitesmoke;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.4s ease;
+}
+
+#sign:hover::after {
+  width: 100%;
+}
+
 #sign:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -80,52 +115,39 @@ body {
   font-size: 18px;
 }
 
-/* .search-bar #bar:focus {
-  padding-right: 22px;
-  width: 36.5vw;
-} */
-
 .search-bar #controller-img {
-  position: absolute;
+  position: fixed;
   transition: 0.5s;
-  width: 33px;
-  height: 24px;
-  right: 10px;
-  top: 4px;
+  width: 29px;
+  height: 22px;
+  right: 545px;
+  top: 19px;
 }
-
-/* .search-bar #bar:focus + #controller-img {
-  right: 0px;
-  transition: 0.4s ease-in-out;
-} */
 
 .search-bar input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 .search-bar #controller-img:hover {
   cursor: pointer;
-  background-color: #e8e8e8;
-  border-radius: 8px;
+  background: lightgrey;
+  box-shadow: 0px 0 0 4px lightgrey;
+  border-radius: 6px;
 }
 
 .search-bar #xmen {
   position: absolute;
   transition: 0.5s;
   border-radius: 16px;
-  width: 21px;
-  height: 21px;
-  left: 532px;
+  width: 28px;
+  height: 28px;
+  left: 535px;
   padding: 0;
-  top: 6px;
+  top: 3px;
   display: none;
 }
 
-.search-bar #bar:focus + #xmen {
-  visibility: visible;
-}
-
 .search-bar #xmen:hover {
-  background-color: yellow;
+  background-color: green;
   border-radius: 15px;
   cursor: pointer;
 }

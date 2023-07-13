@@ -1,6 +1,21 @@
-let x = document.getElementById("xmen");
-let input = document.getElementById("bar");
+document.addEventListener("DOMContentLoaded", () => {
+  const x = document.getElementById("xmen");
+  const input = document.getElementById("bar");
 
-for (let i = 0; i < input.length; i++) {
-  x.style.opacity = 1;
-}
+  //appear th X icon when something is written something
+  input.addEventListener("input", function () {
+    if (input.value.length > 0) {
+      x.style.display = "inline";
+      // Clear the input field value
+      x.addEventListener("click", function () {
+        input.value = "";
+        x.style.display = "none";
+        input.style.width = "35vw";
+      });
+      input.style.width = "37vw";
+    } else {
+      x.style.display = "none";
+      input.style.width = "35vw";
+    }
+  });
+});
