@@ -1,0 +1,2 @@
+1. Να βρω εναν αλλον τροπο για τις εικονες του navbar(τα svg του font-awesome με primary και secondary ειναι με πληρωμη)
+2. Να φτιαξω το dark theme
