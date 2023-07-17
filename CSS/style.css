@@ -120,9 +120,9 @@ body {
   position: absolute;
   display: inline-block;
   margin: 0;
-  padding: 0;
   top: 14px;
   left: 30%;
+  min-width: 30%;
 }
 
 .search-bar #bar {
@@ -139,7 +139,7 @@ body {
   transition: 0.5s;
   width: 29px;
   height: 22px;
-  right: 545px;
+  right: 35.5%;
   top: 19px;
 }
 /* this is for removing the default "x" icon */
@@ -171,3 +171,22 @@ body {
   cursor: pointer;
 }
 /* end of search bar */
+
+/* categorizing column */
+#res {
+  position: absolute;
+  font-size: 18px;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  top: 180px;
+  left: 35%;
+  padding: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#list {
+  font-size: 16px;
+  width: auto;
+  padding: 3px;
+}
