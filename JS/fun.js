@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const x = document.getElementById("xmen");
   const input = document.getElementById("bar");
+  const drop = document.getElementById("list");
 
   //appear th X icon when something is written something
   input.addEventListener("input", function () {
@@ -18,4 +19,5 @@ document.addEventListener("DOMContentLoaded", () => {
       input.style.width = "35vw";
     }
   });
+  drop.addEventListener("mouseover", function () {});
 });
