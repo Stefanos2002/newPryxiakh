@@ -80,7 +80,6 @@ main {
 }
 
 .nav-item:last-child {
-  border: 2px solid green;
   margin-top: auto;
 }
 
