@@ -8,8 +8,11 @@ body {
 }
 
 .container {
+  top: 0;
+  /* container stays on top when scrolling down */
+  position: sticky;
   background-color: black;
-  min-height: 55px;
+  height: 55px;
 }
 
 #title {
@@ -117,15 +120,16 @@ body {
 
 /* search bar */
 .search-bar {
-  position: absolute;
+  position: relative;
   display: inline-block;
   margin: 0;
-  top: 14px;
+  top: 0;
   left: 30%;
   min-width: 30%;
 }
 
 .search-bar #bar {
+  position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 15px;
@@ -135,13 +139,14 @@ body {
 }
 
 .search-bar #controller-img {
-  position: fixed;
+  position: absolute;
   transition: 0.5s;
   width: 29px;
   height: 22px;
-  right: 35.5%;
-  top: 19px;
+  left: 109.5%;
+  top: 5px;
 }
+
 /* this is for removing the default "x" icon */
 .search-bar input[type="search"]::-webkit-search-cancel-button {
   display: none;
@@ -172,19 +177,23 @@ body {
 }
 /* end of search bar */
 
+.main {
+  position: relative;
+  height: 100%;
+  width: auto;
+}
+
 /* categorizing column */
-#res {
+.sort {
   position: absolute;
+  top: 170px;
+  left: 35%;
   font-size: 18px;
   margin: auto;
   transform: translate(-50%, -50%);
-  top: 180px;
-  left: 35%;
-  padding: 10px;
   font-style: italic;
   font-weight: bold;
 }
-
 #list {
   font-size: 16px;
   color: whitesmoke;
@@ -192,8 +201,4 @@ body {
   padding: 3px;
   background: rgb(14, 14, 14);
   transition: width 0.4s ease;
-}
-
-#list:hover {
-  width: 130px;
 }
