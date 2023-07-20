@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: "Games", sans-serif;
   overflow-x: hidden;
+  background-color: cornsilk;
 }
 
 .container {
@@ -171,7 +172,7 @@ body {
 }
 
 .search-bar #xmen:hover {
-  background-color: green;
+  background-color: lightgray;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -194,11 +195,21 @@ body {
   font-style: italic;
   font-weight: bold;
 }
+
 #list {
   font-size: 16px;
   color: whitesmoke;
-  width: 25px;
+  width: 27px;
   padding: 3px;
   background: rgb(14, 14, 14);
   transition: width 0.4s ease;
+}
+
+.posts {
+  position: absolute;
+  /* justify-content: center; */
+  /* transform: translate(-50%, -50%); */
+}
+
+#img1 {
 }

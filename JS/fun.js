@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   drop.addEventListener("mouseover", function () {
-    drop.style.width = "130px";
+    drop.style.width = "132px";
   });
   drop.addEventListener("mouseleave", function () {
     drop.style.width = "25px";
