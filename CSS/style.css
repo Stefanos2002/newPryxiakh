@@ -147,7 +147,7 @@ body {
   transition: 0.5s;
   width: 29px;
   height: 22px;
-  left: 109.5%;
+  left: 108.5%;
   top: 5px;
 }
 
@@ -194,7 +194,7 @@ body {
 .sort {
   position: absolute;
   top: 170px;
-  left: 35%;
+  left: 50%;
   font-size: 18px;
   margin: auto;
   transform: translate(-50%, -50%);
@@ -213,23 +213,39 @@ body {
 
 .posts {
   position: relative;
-  left: 25%;
+  left: 24%;
   top: 230px;
-  width: 70%;
+  width: 50%;
   min-height: 100%;
 }
 
+.gow:hover {
+  filter: grayscale(1);
+  color: rgba(67, 64, 64, 0.991);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 .gow {
-  position: absolute;
+  display: flex;
   border: 1px solid;
+  text-align: justify;
+  transition: transform 0.4s ease;
+  height: 170px;
+}
+
+.gow-comment {
+  padding: 10px;
+}
+
+#comment1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-variant: small-caps;
 }
 
 #img1 {
   width: 300px;
-  height: auto;
+  height: 100%;
   float: left;
-}
-
-#comment1 {
-  font-size: 15px;
 }
