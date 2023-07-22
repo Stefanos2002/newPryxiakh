@@ -7,7 +7,7 @@ body {
   font-family: "Games", sans-serif;
   overflow-x: hidden;
   background-color: cornsilk;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .container {
@@ -193,7 +193,7 @@ body {
 /* categorizing column */
 .sort {
   position: absolute;
-  top: 170px;
+  top: 130px;
   left: 50%;
   font-size: 18px;
   margin: auto;
@@ -214,28 +214,37 @@ body {
 .posts {
   position: relative;
   left: 24%;
-  top: 230px;
+  top: 170px;
   width: 50%;
   min-height: 100%;
 }
 
 .gow:hover {
   filter: grayscale(1);
+  transition: 0.4s;
   color: rgba(67, 64, 64, 0.991);
   transform: scale(1.05);
   cursor: pointer;
 }
 
+.gow:not(:hover) {
+  filter: grayscale(0);
+  transition: 0.4s;
+}
+
 .gow {
   display: flex;
-  border: 1px solid;
+  border: 1px solid grey;
+  border-radius: 4px;
   text-align: justify;
-  transition: transform 0.4s ease;
   height: 170px;
 }
 
 .gow-comment {
-  padding: 10px;
+  padding: 15px;
+  /* hide the text when it overflows */
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 #comment1 {
@@ -244,8 +253,27 @@ body {
   font-variant: small-caps;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+a:focus {
+  color: black;
+}
+
 #img1 {
   width: 300px;
   height: 100%;
   float: left;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
 }
