@@ -1,6 +1,6 @@
 html,
 body {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   margin: 0;
   padding: 0;
@@ -182,12 +182,12 @@ body {
 /* end of search bar */
 
 .main {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  overflow: auto;
 }
 
 /* categorizing column */
@@ -217,9 +217,10 @@ body {
   top: 170px;
   width: 50%;
   min-height: 100%;
+  padding-bottom: 30px;
 }
 
-.gow:hover {
+.gen:hover {
   filter: grayscale(1);
   transition: 0.4s;
   color: rgba(67, 64, 64, 0.991);
@@ -227,27 +228,28 @@ body {
   cursor: pointer;
 }
 
-.gow:not(:hover) {
+.gen:not(:hover) {
   filter: grayscale(0);
   transition: 0.4s;
 }
 
-.gow {
+.gen {
   display: flex;
   border: 1px solid grey;
   border-radius: 4px;
   text-align: justify;
   height: 170px;
+  margin-bottom: 25px;
 }
 
-.gow-comment {
+.gen-comment {
   padding: 15px;
   /* hide the text when it overflows */
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-#comment1 {
+.comment {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-variant: small-caps;
@@ -256,12 +258,13 @@ body {
 a {
   text-decoration: none;
   color: black;
+  /* padding: 10px; */
 }
 a:focus {
   color: black;
 }
 
-#img1 {
+.poster {
   width: 300px;
   height: 100%;
   float: left;
