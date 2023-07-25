@@ -296,16 +296,16 @@ a:focus {
   object-fit: cover;
 }
 
-.text-container {
-}
-
 .text {
   position: absolute;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: justify;
   font-size: 18px;
   position: absolute;
-  color: rgb(153, 93, 93);
+  color: rgb(158, 156, 156);
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: 1px solid;
   /* text-align: justify; */
   transform: translate(-50%, -50%);
   top: 50%;
