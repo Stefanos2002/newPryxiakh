@@ -4,6 +4,7 @@ const icon = document.querySelector('.button-icon');
 const body = document.querySelector('body');
 const navBar = document.querySelector('.nav-bar');
 const linkColor = document.querySelector('.article-link');
+const entryCard = document.querySelector('.entry-card');
 let darkTheme = false;
 
 //function gia na apothikeuei to dark mode topika
@@ -54,17 +55,21 @@ btn.addEventListener('click', () => {
         body.style.color = '#ececec';
         navBar.style.transition = '0.6s ease-in-out';
         navBar.style.backgroundColor = '#141418'
-        linkColor.style.color = '#ececec'
+        linkColor.style.color = 'white'
         linkColor.style.transition = '0.6s ease-in-out';
+        entryCard.style.backgroundColor = '#2a2a2a';
+        entryCard.style.transition = '0.6s ease-in-out';
     }
     else {
         body.style.transition = '0.6s ease-in-out';
-        body.style.backgroundColor = 'white';
+        body.style.backgroundColor = 'rgb(231, 231, 231)';
         body.style.color = 'black';
         navBar.style.transition = '0.6s ease-in-out';
         navBar.style.backgroundColor = '#23232e'
         linkColor.style.color = 'black'
         linkColor.style.transition = '0.6s ease-in-out';
+        entryCard.style.backgroundColor = 'white';
+        entryCard.style.transition = '0.6s ease-in-out';
     }
     setTimeout(() => {
         icon.classList.remove('animated');

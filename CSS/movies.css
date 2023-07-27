@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: rgb(231, 231, 231);
   color: black;
 }
 
@@ -206,6 +206,7 @@ main {
   flex-wrap: wrap;
   position: relative;
   flex-direction: row;
+  background-color: white;
 }
 
 .image-container {
