@@ -88,6 +88,11 @@ main {
   width: 100%;
 }
 
+.nav-item:not(:last-child):hover {
+  transition: 0.6s ease-in-out;
+  background-color: white;
+}
+
 .nav-item:last-child {
   margin-top: auto;
 }
