@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function () { //giati evgaze error s
     }, 2000);
   };
 
-  batmanPoster.onmouseout = function () {
+  batmanPoster.onmouseout = function () { 
     clearTimeout(window.mytimeout);
   };
 

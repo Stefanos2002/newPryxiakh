@@ -3,8 +3,9 @@ const btn = document.querySelector('.button');
 const icon = document.querySelector('.button-icon');
 const body = document.querySelector('body');
 const navBar = document.querySelector('.nav-bar');
-const linkColor = document.querySelector('.article-link');
+const linkColor = document.querySelectorAll('.article-link');
 const entryCard = document.querySelector('.entry-card');
+const linkContent = document.querySelector('.link-content');
 let darkTheme = false;
 
 //function gia na apothikeuei to dark mode topika
@@ -18,7 +19,7 @@ const darkmode = localStorage.getItem('dark-mode');
 if (darkmode === null) {
     store(false);
     icon.classList.add('fa-sun');   //icons tou font-awesome
-    linkColor.style.color = 'black'
+    linkColor.forEach(link => link.style.color = 'black');
 }
 //Epeidh xrhsimopoiw localStorage to true kai to false gyrnane ws strings
 //An to darkmode exei energopoihthei
@@ -55,10 +56,15 @@ btn.addEventListener('click', () => {
         body.style.color = '#ececec';
         navBar.style.transition = '0.6s ease-in-out';
         navBar.style.backgroundColor = '#141418'
-        linkColor.style.color = 'white'
-        linkColor.style.transition = '0.6s ease-in-out';
+
+        linkColor.forEach((link) =>  {
+            link.style.color = 'white';
+            link.style.transition = '0.6s ease-in-out';
+        });
+
         entryCard.style.backgroundColor = '#2a2a2a';
         entryCard.style.transition = '0.6s ease-in-out';
+        linkContent.style.color = 'white';
     }
     else {
         body.style.transition = '0.6s ease-in-out';
@@ -66,12 +72,20 @@ btn.addEventListener('click', () => {
         body.style.color = 'black';
         navBar.style.transition = '0.6s ease-in-out';
         navBar.style.backgroundColor = '#23232e'
-        linkColor.style.color = 'black'
-        linkColor.style.transition = '0.6s ease-in-out';
+        
+        linkColor.forEach((link) =>  {
+            link.style.color = 'black';
+            link.style.transition = '0.6s ease-in-out';
+        });
+        
         entryCard.style.backgroundColor = 'white';
-        entryCard.style.transition = '0.6s ease-in-out';
+        entryCard.style.transition = '0.6s ease-in-out';    
     }
     setTimeout(() => {
         icon.classList.remove('animated');
     }, 500);
 });
+
+
+
+
