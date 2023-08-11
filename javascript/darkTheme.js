@@ -4,7 +4,7 @@ const icon = document.querySelector('.button-icon');
 const body = document.querySelector('body');
 const navBar = document.querySelector('.nav-bar');
 const linkColor = document.querySelectorAll('.article-link');
-const entryCard = document.querySelector('.entry-card');
+const entryCard = document.querySelectorAll('.entry-card');
 const linkContent = document.querySelector('.link-content');
 let darkTheme = false;
 
@@ -62,8 +62,10 @@ btn.addEventListener('click', () => {
             link.style.transition = '0.6s ease-in-out';
         });
 
-        entryCard.style.backgroundColor = '#2a2a2a';
-        entryCard.style.transition = '0.6s ease-in-out';
+        entryCard.forEach((card) => {
+            card.style.backgroundColor= '#2a2a2a';
+            card.style.transition = '0.6s ease-in-out';
+        });
         linkContent.style.color = 'white';
     }
     else {
@@ -78,8 +80,10 @@ btn.addEventListener('click', () => {
             link.style.transition = '0.6s ease-in-out';
         });
         
-        entryCard.style.backgroundColor = 'white';
-        entryCard.style.transition = '0.6s ease-in-out';    
+        entryCard.forEach((card) => {
+            card.style.backgroundColor= 'white';
+            card.style.transition = '0.6s ease-in-out';
+        });
     }
     setTimeout(() => {
         icon.classList.remove('animated');
