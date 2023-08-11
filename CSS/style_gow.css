@@ -2,9 +2,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-}
-
-.gow {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -30,22 +27,22 @@ body {
 
 .header {
   font-style: italic;
-  -webkit-text-stroke: 1px black;
   color: white;
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
   z-index: 1;
-  width: 100%;
+  width: 500px;
+  position: absolute;
 }
 
 .header#art {
-  top: 5%;
-  left: 400px;
+  top: 85px;
+  left: 10px;
 }
 
 .header#sharp {
-  top: 115%;
-  left: 400px;
+  top: 945px;
+  left: 10px;
 }
 
 .text {
@@ -53,50 +50,73 @@ body {
   font-size: 17px;
   color: white;
   line-height: 22px;
-  background-color: rgb(73, 61, 61, 0.5);
+  background-color: rgba(73, 61, 61, 0.5);
   border-radius: 10px;
   border: 2px solid;
   text-align: justify;
   padding: 14px;
   align-self: center;
+  position: absolute;
+  overflow: auto;
+  height: 180px;
+  max-width: calc(180% - 40px);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: white; /* Track color */
+}
+.text {
+  scrollbar-width: none;
+}
+
+.text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text::-webkit-scrollbar-track {
+  background: rgba(73, 61, 61, 0.5);
+}
+
+.text::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.7); /* Thumb color */
+  border-radius: 4px;
+}
+
+.text::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Thumb color on hover */
 }
 
 .text#text1 {
-  position: absolute;
   width: 750px;
-  height: auto;
+  height: 280px;
   top: 300px;
 }
 
-video {
-  position: absolute;
-  width: 700px;
-  height: auto;
-  top: 520px;
-}
-
 .text#text2 {
-  position: absolute;
-  width: 750px;
-  top: 1040px;
+  width: 757px;
+  top: 1100px;
 }
 
 .text#text3 {
-  position: absolute;
   width: 750px;
-  top: 1140px;
+  top: 1200px;
+}
+
+video {
+  width: 700px;
+  height: auto;
+  top: 520px;
+  position: absolute;
 }
 
 #quote {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  position: absolute;
   color: rgb(99, 9, 9);
   font-style: italic;
   font-weight: bolder;
   text-align: justify;
   z-index: 1;
-  top: 1350px;
-  left: 91%;
+  top: 1419px;
+  right: -110px;
   width: 100px;
   height: 260px;
   display: flex;
@@ -106,13 +126,14 @@ video {
   border: 1px solid whitesmoke;
   padding: 20px;
   border-radius: 5px;
-  background-color: rgb(73, 61, 61, 0.5);
+  background-color: rgba(73, 61, 61, 0.5);
+  position: absolute;
 }
 
 #quote-img {
-  position: absolute;
-  height: 300px;
+  height: auto;
   width: 550px;
-  top: 1370px;
-  left: 6%;
+  top: 1440px;
+  right: 30px;
+  position: absolute;
 }
