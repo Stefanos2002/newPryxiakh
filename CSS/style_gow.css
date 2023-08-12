@@ -1,37 +1,23 @@
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.gow {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-image: url(/images/gow_b.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 .content {
-  position: relative;
-  width: 60vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1rem;
-}
-
-.background {
-  top: 0;
-  right: 10px;
-  bottom: 0;
-  width: 100%;
+  box-sizing: border-box;
+  width: 55vw;
   height: auto;
-  object-fit: cover;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.content > * {
+  max-width: calc(165% - 40px);
 }
 
 .header {
@@ -39,69 +25,31 @@ body {
   color: whitesmoke;
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 2.5rem;
   z-index: 1;
-  width: 500px;
-  position: absolute;
-  margin: 1rem;
-}
-
-#art {
-  top: 85px;
-  left: 10px;
-}
-
-#sharp {
-  top: 945px;
-  left: 10px;
+  width: 35rem;
 }
 
 .text {
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   color: white;
-  line-height: 22px;
+  line-height: 1.5rem;
   background-color: rgba(73, 61, 61, 0.5);
   border-radius: 10px;
   border: 2px solid;
   text-align: justify;
   padding: 14px;
-  position: absolute;
-  overflow: auto;
-  height: 180px;
-  max-width: calc(180% - 40px);
-}
-
-.text::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Thumb color on hover */
-}
-
-#text1 {
-  width: 750px;
-  height: 280px;
-  top: 300px;
-}
-
-#text2 {
-  width: 757px;
-  top: 1100px;
-}
-
-#text3 {
-  width: 750px;
-  top: 1200px;
+  height: auto;
+  width: 50rem;
 }
 
 video {
-  width: 100%;
-  margin-top: auto;
-  height: 100%;
-  top: auto;
-  position: absolute;
+  width: 45rem;
+  height: 20rem;
+  object-fit: cover;
 }
 
 #quote {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: rgb(99, 9, 9);
   font-style: italic;
   font-weight: bolder;
@@ -119,7 +67,6 @@ video {
   padding: 20px;
   border-radius: 5px;
   background-color: rgba(73, 61, 61, 0.5);
-  position: absolute;
 }
 
 #quote-img {
@@ -127,5 +74,4 @@ video {
   width: 550px;
   top: 1440px;
   right: 30px;
-  position: absolute;
 }
