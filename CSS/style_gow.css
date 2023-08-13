@@ -15,6 +15,7 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  padding-bottom: 40px;
 }
 .content > * {
   max-width: calc(165% - 40px);
@@ -26,14 +27,14 @@ body {
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
     -1px 1px 0 #000, 1px 1px 0 #000;
   font-size: 2.5rem;
-  z-index: 1;
   width: 35rem;
+  margin-bottom: 0px;
 }
 
 .text {
   font-size: 18px;
   color: white;
-  line-height: 1.5rem;
+  line-height: 1.6rem;
   background-color: rgba(73, 61, 61, 0.5);
   border-radius: 10px;
   border: 2px solid;
@@ -42,36 +43,50 @@ body {
   height: auto;
   width: 50rem;
 }
+.text.text3 {
+  margin-top: 0px;
+}
 
 video {
-  width: 45rem;
+  width: 50rem;
   height: 20rem;
   object-fit: cover;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.quote-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 4rem;
+  justify-content: space-evenly;
+}
+.quote-container > * {
+  max-width: calc(132% - 40px);
 }
 
 #quote {
   color: rgb(99, 9, 9);
   font-style: italic;
   font-weight: bolder;
-  text-align: justify;
-  z-index: 1;
-  top: 1419px;
-  right: -110px;
-  width: 100px;
-  height: 260px;
+  text-align: start;
+  width: 5rem;
+  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 0px;
   border: 1px solid whitesmoke;
-  padding: 20px;
+  padding: 20px 30px;
   border-radius: 5px;
+  transition: height 0.2s ease;
   background-color: rgba(73, 61, 61, 0.5);
 }
 
 #quote-img {
-  height: auto;
-  width: 550px;
-  top: 1440px;
-  right: 30px;
+  width: 40rem;
+}
+
+.text.text4 {
+  margin-top: 0px;
 }
