@@ -7,6 +7,7 @@ const linkColor = document.querySelectorAll('.article-link');
 const entryCard = document.querySelectorAll('.entry-card');
 const linkContent = document.querySelector('.link-content');
 let darkTheme = false;
+let scrollPosition = 0; //Metavlhth gia na apothikeuetai h thesh tou scroll bar etsi wste otan allazei se dark theme na mhn anevainei panw
 
 //function gia na apothikeuei to dark mode topika
 function store(value) {
@@ -34,6 +35,10 @@ else
 
 
 btn.addEventListener('click', () => {
+
+    scrollPosition = window.scrollY; //Apothikeuei thn twrinh thesh tou scroll bar
+
+
     theme.classList.toggle('dark-mode');
     icon.classList.add('animated');
 
@@ -85,6 +90,12 @@ btn.addEventListener('click', () => {
             card.style.transition = '0.6s ease-in-out';
         });
     }
+
+    //molis allaxei to theme epanaferw th thesh tou scroll bar
+    setTimeout(() => {
+        window.scrollTo(0, scrollPosition);
+    }, 0);  //Me ena mikro delay gia na eimai sigouros oti tha ginei afou kanei update to DOM
+    
     setTimeout(() => {
         icon.classList.remove('animated');
     }, 500);
