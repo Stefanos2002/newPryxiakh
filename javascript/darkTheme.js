@@ -6,6 +6,7 @@ const navBar = document.querySelector('.nav-bar');
 const linkColor = document.querySelectorAll('.article-link');
 const entryCard = document.querySelectorAll('.entry-card');
 const linkContent = document.querySelector('.link-content');
+const portraitIcon = document.querySelectorAll('.portrait-icon');
 let darkTheme = false;
 let scrollPosition = 0; //Metavlhth gia na apothikeuetai h thesh tou scroll bar etsi wste otan allazei se dark theme na mhn anevainei panw
 
@@ -57,6 +58,10 @@ btn.addEventListener('click', () => {
 
     if (darkTheme === true) {
         body.style.transition = '0.6s ease-in-out';
+        portraitIcon.forEach((icon) => {
+            icon.style.color = 'white';
+            icon.style.transition = '0.6s ease-in-out';
+        });
         body.style.backgroundColor = '#2b2b2b';
         body.style.color = '#ececec';
         navBar.style.transition = '0.6s ease-in-out';
@@ -79,6 +84,10 @@ btn.addEventListener('click', () => {
         body.style.color = 'black';
         navBar.style.transition = '0.6s ease-in-out';
         navBar.style.backgroundColor = '#23232e'
+        portraitIcon.forEach((icon) => {
+            icon.style.color = 'black';
+            icon.style.transition = '0.6s ease-in-out';
+        });
         
         linkColor.forEach((link) =>  {
             link.style.color = 'black';

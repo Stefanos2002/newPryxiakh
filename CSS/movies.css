@@ -195,6 +195,20 @@ html {
     inset 8px 0 8px rgba(0, 0, 0, 0.3), inset 0 -4px 4px rgba(0, 0, 0, 0.3);
 }
 
+.starring-actors a {
+  color: black;
+  text-decoration: none;
+}
+
+.starring-actors a:hover {
+  color: purple;
+  transition: 0.2s ease-in-out;
+}
+
+.paragraph-content .link-content{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 /* ---------------MAIN CONTENT--------------- */
 .headline {
   display: grid;
@@ -209,6 +223,7 @@ html {
 }
 
 .entry-paragraph {
+  object-fit: contain;
   margin-top: 2.5rem;
   margin-left: 4rem;
 }
@@ -269,8 +284,8 @@ html {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 16rem;
-  height: 16rem;
+  position: relative;
+  object-fit: contain;
   box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
 }
