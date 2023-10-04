@@ -1,44 +1,68 @@
 html,
 body {
+  min-width: 700px;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: "Games", sans-serif;
-  overflow-x: hidden;
-  overflow-y: visible;
   background-color: cornsilk;
 }
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
 .container {
-  top: 0;
   /* container stays on top when scrolling down */
   position: sticky;
+  display: flex;
+  flex-direction: row;
   background-color: black;
-  height: 55px;
-  z-index: 9999;
+  height: 60px;
+  width: 100%;
 }
-
-#title {
-  position: absolute;
-  color: whitesmoke;
-  font-size: 3rem;
-  margin: 0;
-  cursor: pointer;
+.main {
+  height: 100%;
 }
 
 /* logos of game industries */
-.logos #ps {
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2.2rem;
+  width: 37px;
+  height: 30px;
   position: absolute;
-  max-width: 34px;
-  top: 15px;
-  right: 25%;
+  right: 200px;
+  top: 12px;
 }
-
 .logos #ps:hover {
   transform: scale(1.3);
 }
-
+@media (max-width: 1064px) {
+  .logos #ps {
+    visibility: hidden;
+  }
+}
+@media (max-width: 952px) {
+  .logos #xbox {
+    visibility: hidden;
+  }
+}
+@media (max-width: 844px) {
+  .logos #nintendo {
+    visibility: hidden;
+  }
+}
+@media (max-width: 728px) {
+  .logos #pc {
+    visibility: hidden;
+  }
+}
 .logos img {
   max-width: 100%;
   transition: transform 0.3s ease;
@@ -48,35 +72,19 @@ body {
   cursor: pointer;
 }
 
-.logos #xbox {
-  position: absolute;
-  max-width: 30px;
-  top: 15px;
-  right: 20%;
-}
-
 .logos #xbox:hover {
   transform: scale(1.3);
-}
-
-.logos #nintendo {
-  position: absolute;
-  max-width: 36px;
-  top: 11px;
-  right: 14.5%;
 }
 
 .logos #nintendo:hover {
   transform: scale(1.3);
 }
-
-.logos #pc {
-  position: absolute;
-  max-width: 25px;
-  top: 11px;
-  right: 9.5%;
+#nintendo {
+  height: 38px;
 }
-
+#pc {
+  height: 38px;
+}
 .logos #pc:hover {
   transform: scale(1.3);
 }
@@ -84,12 +92,13 @@ body {
 
 /* sign in/up part */
 .login {
-  position: absolute;
+  position: relative;
   color: whitesmoke;
-  top: 11px;
-  right: 2%;
   display: flex;
   flex-direction: column;
+  white-space: nowrap;
+  bottom: 2px;
+  height: 35px !important;
 }
 
 .login:hover {
@@ -107,12 +116,12 @@ body {
 }
 
 #sign-up::after {
-  bottom: 0;
+  top: 36px;
   left: 0;
 }
 
 #sign-in::after {
-  bottom: 17px;
+  bottom: 16px;
   right: 0;
 }
 
@@ -121,74 +130,59 @@ body {
   width: 100%;
 }
 /* end of sign-in/up */
-
-/* search bar */
-.search-bar {
+.search-container {
   position: relative;
-  display: inline-block;
-  margin: 0;
-  top: 0;
-  left: 30%;
-  min-width: 30%;
+  left: 34%;
 }
-
-.search-bar #bar {
-  position: absolute;
+#bar {
+  margin-top: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
-  border-radius: 15px;
-  width: 35vw;
+  border-radius: 18px;
+  height: 38px;
   padding: 4px 2px 4px 22px;
   font-size: 18px;
+  transition: width 0.2s ease;
 }
 
-.search-bar #controller-img {
+.search-container #controller-img {
   position: absolute;
   transition: 0.5s;
-  width: 29px;
-  height: 22px;
-  left: 108.5%;
-  top: 5px;
+  height: 20px;
+  right: 6px;
+  transform: translateY(100%);
 }
-
-/* this is for removing the default "x" icon */
-.search-bar input[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-.search-bar #controller-img:hover {
+#controller-img:hover {
   cursor: pointer;
   background: lightgrey;
   box-shadow: 0px 0 0 4px lightgrey;
   border-radius: 6px;
 }
 
-.search-bar #xmen {
-  position: absolute;
-  transition: 0.5s;
-  border-radius: 16px;
-  width: 28px;
-  height: 28px;
-  left: 532px;
-  padding: 0;
-  top: 3px;
+/* this is for removing the default "x" icon */
+input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 
-.search-bar #xmen:hover {
+#xicon {
+  position: absolute;
+  border-radius: 16px;
+  width: 28px;
+  height: 28px;
+  right: 3px;
+  padding: 0;
+  top: 16px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.1s ease, 0.5s;
+}
+
+#xicon:hover {
   background-color: lightgray;
   border-radius: 15px;
   cursor: pointer;
 }
 /* end of search bar */
-
-.main {
-  top: 55px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  overflow: auto;
-}
 
 /* categorizing column */
 .sort {
@@ -212,10 +206,11 @@ body {
 }
 
 .posts {
-  position: relative;
-  left: 24%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   top: 170px;
-  width: 50%;
+  width: 60%;
   min-height: 100%;
   padding-bottom: 30px;
 }
@@ -234,6 +229,7 @@ body {
 }
 
 .gen {
+  min-width: 200px;
   display: flex;
   border: 1px solid grey;
   border-radius: 4px;
