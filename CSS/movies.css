@@ -91,6 +91,7 @@ html {
   width: 100%;
 }
 
+/* gia na mhn allazei to background sto koumpi tou dark theme pou einai to last child */
 .nav-item:not(:last-child):hover {
   transition: 0.6s ease-in-out;
   background-color: rgb(107, 107, 107);
@@ -130,8 +131,6 @@ html {
   margin: 0 1.5rem;
   color: rgb(210, 210, 210);
 }
-
-/* style="visibility: visible; opacity: 1; text-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px; letter-spacing: -17px; user-select: none;" */
 
 /* ---------------THEME--------------- */
 
@@ -202,7 +201,7 @@ html {
 
 .starring-actors a:hover {
   color: purple;
-  transition: 0.2s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 .paragraph-content .link-content{
