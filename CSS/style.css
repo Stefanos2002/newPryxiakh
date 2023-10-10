@@ -17,11 +17,13 @@ body {
 }
 .container {
   /* container stays on top when scrolling down */
-  position: sticky;
+  position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   background-color: black;
-  height: 60px;
+  min-height: 3.8em;
   width: 100%;
 }
 .main {
@@ -132,25 +134,27 @@ body {
 /* end of sign-in/up */
 .search-container {
   position: relative;
-  left: 34%;
+  margin-top: -10px;
 }
 #bar {
-  margin-top: 12px;
+  width: 29vw;
+  margin-top: 14px;
+  margin-right: -3px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 18px;
   height: 38px;
   padding: 4px 2px 4px 22px;
   font-size: 18px;
-  transition: width 0.2s ease;
+  transition: padding 0.07s;
 }
 
 .search-container #controller-img {
   position: absolute;
   transition: 0.5s;
   height: 20px;
-  right: 6px;
-  transform: translateY(100%);
+  top: 22px;
+  right: 0.5em;
 }
 #controller-img:hover {
   cursor: pointer;
