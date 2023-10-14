@@ -1,6 +1,5 @@
 html,
 body {
-  min-width: 700px;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -27,7 +26,13 @@ body {
   width: 100%;
 }
 .main {
+  position: relative;
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
 }
 
 /* logos of game industries */
@@ -45,7 +50,7 @@ body {
 .logos #ps:hover {
   transform: scale(1.3);
 }
-@media (max-width: 1064px) {
+/* @media (max-width: 1064px) {
   .logos #ps {
     visibility: hidden;
   }
@@ -64,7 +69,7 @@ body {
   .logos #pc {
     visibility: hidden;
   }
-}
+} */
 .logos img {
   max-width: 100%;
   transition: transform 0.3s ease;
@@ -139,7 +144,8 @@ body {
 #bar {
   width: 29vw;
   margin-top: 14px;
-  margin-right: -3px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 18px;
@@ -156,6 +162,7 @@ body {
   top: 22px;
   right: 0.5em;
 }
+
 #controller-img:hover {
   cursor: pointer;
   background: lightgrey;
@@ -203,19 +210,22 @@ input[type="search"]::-webkit-search-cancel-button {
 #list {
   font-size: 16px;
   color: whitesmoke;
-  width: 27px;
+  width: 1.5em;
   padding: 3px;
   background: rgb(14, 14, 14);
   transition: width 0.4s ease;
 }
 
+#list:hover,
+#list.comment:hover {
+  width: 8.1em;
+}
+
 .posts {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   top: 170px;
-  width: 60%;
-  min-height: 100%;
+  width: 55em;
+  max-width: calc(95% - 40px);
   padding-bottom: 30px;
 }
 
@@ -233,19 +243,18 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .gen {
-  min-width: 200px;
+  /* min-width: 400px; */
   display: flex;
+  flex-direction: row;
   border: 1px solid grey;
-  border-radius: 4px;
-  text-align: justify;
-  height: 170px;
+  border-radius: 0px 10px 10px 0px;
+  height: 10.6em;
   margin-bottom: 25px;
 }
 
 .gen-comment {
-  padding: 15px;
+  padding: 2%;
   /* hide the text when it overflows */
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -265,7 +274,7 @@ a:focus {
 }
 
 .poster {
-  width: 300px;
+  width: 19em;
   height: 100%;
   float: left;
 }
@@ -329,12 +338,19 @@ a:focus {
   padding: 10px;
 }
 
-.combat video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35%;
-  top: 90%;
-  padding: 40px;
+@media (max-width: 460px) {
+  .poster {
+    width: 100%;
+    height: 100%;
+  }
+  .gen {
+    border-radius: 0 0 10px 10px;
+    height: 20em;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+  .gen-comment {
+    padding: 2%;
+  }
 }
