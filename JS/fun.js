@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const x = document.getElementById("xicon");
   const input = document.getElementById("bar");
   const controller = document.getElementById("controller-img");
+  const list = document.getElementById("list");
+
+  list.addEventListener("change", function () {
+    list.classList.remove("expanded");
+    list.blur();
+  });
 
   //appear th X icon when something is written something
   input.addEventListener("input", function () {
