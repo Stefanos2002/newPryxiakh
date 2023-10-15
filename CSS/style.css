@@ -365,8 +365,11 @@ a:focus {
   }
   .sort {
     font-size: 1em;
+    flex-direction: column;
   }
   #list {
-    text-align: center;
+    font-size: 14px;
+    margin: 0 auto;
+    width: 8.3em;
   }
 }
