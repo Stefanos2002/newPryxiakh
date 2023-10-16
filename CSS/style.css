@@ -5,7 +5,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Games", sans-serif;
-  background-color: cornsilk;
 }
 .wrapper {
   display: flex;
@@ -53,26 +52,6 @@ body {
 .logos #ps:hover {
   transform: scale(1.3);
 }
-/* @media (max-width: 1064px) {
-  .logos #ps {
-    visibility: hidden;
-  }
-}
-@media (max-width: 952px) {
-  .logos #xbox {
-    visibility: hidden;
-  }
-}
-@media (max-width: 844px) {
-  .logos #nintendo {
-    visibility: hidden;
-  }
-}
-@media (max-width: 728px) {
-  .logos #pc {
-    visibility: hidden;
-  }
-} */
 .logos img {
   max-width: 100%;
   transition: transform 0.3s ease;
@@ -145,7 +124,7 @@ body {
   margin-top: -10px;
 }
 #bar {
-  width: 29vw;
+  width: 30vw;
   margin-top: 14px;
   margin-left: auto;
   margin-right: auto;
@@ -155,7 +134,7 @@ body {
   height: 38px;
   padding: 4px 2px 4px 22px;
   font-size: 18px;
-  transition: padding 0.07s;
+  transition: padding 0.07s, height 0.2s ease;
 }
 
 .search-container #controller-img {
@@ -205,6 +184,7 @@ input[type="search"]::-webkit-search-cancel-button {
   justify-content: space-around;
   gap: 5px;
   position: absolute;
+  color: rgb(76, 23, 23);
   top: 130px;
   left: 50%;
   font-size: 18px;
@@ -217,10 +197,9 @@ input[type="search"]::-webkit-search-cancel-button {
 
 #list {
   font-size: 16px;
-  color: whitesmoke;
-  width: 1.5em;
-  padding: 3px;
-  background: rgb(14, 14, 14);
+  color: rgb(244, 240, 240);
+  width: 1.3em;
+  background: rgb(29, 27, 26);
   transition: width 0.4s ease;
   cursor: pointer;
 }
@@ -245,7 +224,6 @@ input[type="search"]::-webkit-search-cancel-button {
 .gen:hover {
   filter: grayscale(1);
   transition: 0.4s;
-  color: rgba(67, 64, 64, 0.991);
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -267,7 +245,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .gen-comment {
   padding: 2%;
-  background-color: rgba(38, 24, 24, 0.5);
+  background-color: rgba(38, 24, 24, 0.7);
   /* hide the text when it overflows */
   overflow: hidden;
 }
@@ -276,6 +254,7 @@ input[type="search"]::-webkit-search-cancel-button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-variant: small-caps;
+  line-height: 1.4em;
 }
 
 a {
@@ -300,6 +279,12 @@ a {
   box-shadow: inset 0 0 5px grey;
 }
 
+@media (max-width: 935px) {
+  #bar {
+    width: 280px;
+  }
+}
+/* cell view */
 @media (max-width: 460px) {
   .poster {
     width: 100%;
@@ -323,5 +308,11 @@ a {
     font-size: 14px;
     margin: 0 auto;
     width: 8.3em;
+  }
+  #bar {
+    width: 60vw;
+    font-size: 16px;
+    padding-left: 18px;
+    height: 2.1em;
   }
 }
