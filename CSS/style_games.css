@@ -18,7 +18,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   background-color: black;
   min-height: 3.8em;
@@ -26,9 +26,7 @@ body {
 }
 
 #back {
-  position: absolute;
   color: white;
-  left: 10px;
 }
 #back a {
   text-decoration: underline;
@@ -52,13 +50,11 @@ body {
 .logos {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 2.2rem;
-  width: 37px;
-  height: 30px;
-  position: absolute;
-  right: 200px;
-  top: 12px;
+  margin-left: auto;
+  margin-right: 10px;
+  justify-content: flex-end;
+  gap: 2.4rem;
+  height: 2.4em;
 }
 .logos #ps:hover {
   transform: scale(1.3);
@@ -79,11 +75,11 @@ body {
 .logos #nintendo:hover {
   transform: scale(1.3);
 }
-#nintendo {
-  height: 38px;
+#ps {
+  height: 35px;
 }
-#pc {
-  height: 38px;
+#xbox {
+  height: 35px;
 }
 .logos #pc:hover {
   transform: scale(1.3);
@@ -99,6 +95,7 @@ body {
   white-space: nowrap;
   bottom: 2px;
   height: 35px !important;
+  font-size: 18px;
 }
 
 .login:hover {
@@ -110,13 +107,13 @@ body {
   content: "";
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 1.2px;
   background-color: whitesmoke;
   transition: width 0.4s ease;
 }
 
 #sign-up::after {
-  top: 36px;
+  top: 39px;
   left: 0;
 }
 
@@ -133,6 +130,7 @@ body {
 .search-container {
   position: relative;
   margin-top: -10px;
+  margin-left: auto;
 }
 #bar {
   width: 30vw;
@@ -198,11 +196,11 @@ input[type="search"]::-webkit-search-cancel-button {
   color: rgb(76, 23, 23);
   top: 130px;
   left: 50%;
-  font-size: 18px;
+  font-size: 26px;
   margin: auto;
   transform: translate(-50%, -50%);
   font-style: italic;
-  font-weight: bold;
+  font-weight: bolder;
   text-wrap: nowrap;
 }
 
@@ -312,7 +310,7 @@ a {
     padding: 2%;
   }
   .sort {
-    font-size: 1em;
+    font-size: 22px;
     flex-direction: column;
   }
   #list {
