@@ -132,7 +132,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 80%;
+  width: 72%;
 }
 /* end of sign-in/up */
 
@@ -193,24 +193,24 @@ body {
   margin-top: -10px;
   margin-left: auto;
   margin-right: auto;
+  /* width: 100%; */
 }
 #bar {
   width: 30vw;
   margin-top: 14px;
-  margin-left: auto;
-  margin-right: auto;
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 18px;
   height: 38px;
-  padding: 4px 2px 4px 22px;
+  padding: 4px 2px 4px 20px;
   font-size: 18px;
   transition: padding 0.07s, height 0.2s ease;
+  box-sizing: border-box;
 }
 
 #controller-img {
   position: absolute;
-  transition: 0.5s;
+  /* transition: 0.5s; */
   height: 20px;
   top: 22px;
   right: 0.5em;
