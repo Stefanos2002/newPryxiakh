@@ -14,20 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (input.value.length > 0) {
       x.style.display = "inline-block";
       x.style.opacity = 1;
+      x.style.top = "18px";
+      controller.style.right = "32px";
 
       // Clear the input field value
       x.addEventListener("click", function () {
         input.value = "";
         x.style.opacity = 0;
 
-        // input.style.padding = "4px 2px 4px 20px";
-
         controller.style.right = "6px";
       });
     } else {
       controller.style.right = "6px";
       x.style.opacity = 0;
-      // input.style.padding = "4px 2px 4px 20px";
     }
   });
 });

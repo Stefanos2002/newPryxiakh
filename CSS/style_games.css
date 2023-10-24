@@ -26,10 +26,26 @@ body {
   width: 100%;
 }
 
+#return {
+  display: none;
+}
+
+.return-btn {
+  border: none;
+  cursor: pointer;
+  width: auto;
+  background-color: black;
+  transition: 0.2s ease;
+}
+.return-btn:hover {
+  transform: scale(1.1);
+}
+
 #back {
   width: auto;
   margin-left: 10px;
   color: white;
+  text-wrap: nowrap;
 }
 #back a {
   text-decoration: underline;
@@ -81,10 +97,6 @@ body {
 .logos #pc:hover {
   transform: scale(1.3);
 }
-
-/* #dropdown-list {
-  display: none;
-} */
 /*end of logos  */
 
 /* sign in/up part */
@@ -132,7 +144,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 72%;
+  width: 100%;
 }
 /* end of sign-in/up */
 
@@ -140,7 +152,7 @@ body {
 .dropdown {
   display: none !important;
   position: absolute;
-  top: 13px;
+  top: 0px;
   margin-right: auto;
 }
 .dropbtn {
@@ -148,7 +160,7 @@ body {
   font-size: 12px;
   border: none;
   cursor: pointer;
-  width: 3em;
+  width: 4em;
   border-radius: 10px;
 }
 .dropbtn img {
@@ -184,16 +196,14 @@ body {
   display: flex;
   flex-direction: row;
   margin-right: 30px;
-  /* justify-content: flex-end; */
   gap: 2.4rem;
   height: 2.4em;
 }
 .search-container {
   position: relative;
   margin-top: -10px;
-  margin-left: auto;
   margin-right: auto;
-  /* width: 100%; */
+  margin-left: auto;
 }
 #bar {
   width: 30vw;
@@ -202,7 +212,7 @@ body {
   font-style: italic;
   border-radius: 18px;
   height: 38px;
-  padding: 4px 2px 4px 20px;
+  padding: 4px 65px 4px 20px;
   font-size: 18px;
   transition: padding 0.07s, height 0.2s ease;
   box-sizing: border-box;
@@ -213,7 +223,7 @@ body {
   /* transition: 0.5s; */
   height: 20px;
   top: 22px;
-  right: 0.5em;
+  right: 6px;
 }
 
 #controller-img:hover {
@@ -349,20 +359,24 @@ a {
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
 }
+
 @media (max-width: 1110px) {
   .logos {
     transition: gap 0.2s ease;
-    gap: 1.5em;
+    gap: 1em;
   }
 }
-@media (max-width: 848px) {
-  .search-logos {
-    flex-direction: column;
-    gap: 0.6em;
-    margin-left: 20px;
+
+@media (max-width: 973px) {
+  #return {
+    display: block;
+    width: 50px;
+  }
+  #back {
+    display: none;
   }
   .login {
-    margin-left: 25px;
+    margin-left: 15px;
     font-size: 1.5em;
   }
   #sign-up::after {
@@ -375,33 +389,15 @@ a {
     bottom: 30px;
     right: 0;
   }
-  .search-container {
-    margin-top: 10px;
-    margin-left: 0;
-  }
-  .container {
-    height: 8em;
-  }
-  #nintendo {
-    width: 2.2em;
-    height: 2em;
-  }
-  #pc {
-    width: 1.5em;
-    height: 2em;
-  }
-  #xbox {
-    width: 1.6em;
-    height: 1.6em;
-  }
-  #ps {
-    width: 2em;
-    height: 1.6em;
-  }
+
   .logos {
-    margin-left: 30px;
+    display: none;
+  }
+  .dropdown {
+    display: block !important;
   }
 }
+
 @media (max-width: 935px) {
   #bar {
     width: 280px;
@@ -413,16 +409,10 @@ a {
   }
 }
 @media (max-width: 480px) {
-  .dropdown {
-    display: block !important;
-  }
   .logos {
     display: none;
   }
   .login {
-    /* flex-direction: row;
-    font-size: 22px;
-    transform: translate(-7em, 0.9em); */
     display: none;
   }
   #back {
