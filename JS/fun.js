@@ -21,12 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       x.addEventListener("click", function () {
         input.value = "";
         x.style.opacity = 0;
-
+        x.style.display = "none";
         controller.style.right = "6px";
       });
     } else {
       controller.style.right = "6px";
       x.style.opacity = 0;
+      x.style.display = "none";
     }
   });
 });

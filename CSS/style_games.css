@@ -28,17 +28,17 @@ body {
 
 #return {
   display: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#return:hover {
+  transform: scale(1.1);
 }
 
 .return-btn {
   border: none;
-  cursor: pointer;
   width: auto;
   background-color: black;
-  transition: 0.2s ease;
-}
-.return-btn:hover {
-  transform: scale(1.1);
 }
 
 #back {
@@ -151,7 +151,7 @@ body {
 /* drop menu for cellphones */
 .dropdown {
   display: none !important;
-  position: absolute;
+  position: relative;
   top: 0px;
   margin-right: auto;
 }
@@ -167,19 +167,23 @@ body {
   width: 100%;
   height: 100%;
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+
 .dropdown-content {
+  text-align: center;
   display: none;
   position: absolute;
   background-color: black;
-  width: auto;
-  /* min-width: auto; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  width: auto;
+  transform: translateX(-20%);
+  font-size: 18px;
 }
+
+.dropdown-content a {
+  line-height: 30px;
+}
+
 .dropdown-content a:hover {
   background-color: grey;
 }
@@ -190,6 +194,11 @@ body {
 
 .dropdown:hover .dropbtn {
   background-color: rgb(99, 96, 96);
+}
+
+#sign {
+  display: none;
+  color: rgb(202, 182, 25);
 }
 
 .logos {
@@ -220,7 +229,7 @@ body {
 
 #controller-img {
   position: absolute;
-  /* transition: 0.5s; */
+  transition: 0.5s;
   height: 20px;
   top: 22px;
   right: 6px;
@@ -372,6 +381,9 @@ a {
     display: block;
     width: 50px;
   }
+  .return-btn {
+    width: 20em;
+  }
   #back {
     display: none;
   }
@@ -389,7 +401,6 @@ a {
     bottom: 30px;
     right: 0;
   }
-
   .logos {
     display: none;
   }
@@ -424,10 +435,9 @@ a {
   .search-container {
     margin-left: 16%;
   }
-  /* #dropdown-list {
-    margin-right: 20px;
-    display: inline-block;
-  } */
+  #sign {
+    display: block;
+  }
   #sign-up::after {
     top: 22px;
     left: 0;
