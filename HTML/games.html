@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/style_games.css" />
-    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet" />
+    <!-- <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet" /> -->
     <script src="/JS/fun.js"></script>
     <title>Home</title>
   </head>
@@ -12,7 +12,7 @@
     <div class="wrapper">
       <div class="container">
         <h3 id="back">
-          Go <a href="/home.html">back</a> to choose a different category
+          Go <a href="#">back</a> to choose a different category
         </h3>
         <button class="return-btn">
           <img src="/images/return.png" alt="return_icon" id="return" />
@@ -35,11 +35,23 @@
             <img src="/images/menu.png" alt="menu" id="Menu-img" />
           </button>
           <div class="dropdown-content">
-            <a href="#">Playstation</a>
-            <a href="#">Xbox</a>
-            <a href="#">Nintendo</a>
-            <a href="#">PC-Games</a>
-            <a href="#" id="sign">Sign-in/Sign-up</a>
+            <ul>
+              <li>
+                <a href="#">Playstation</a>
+              </li>
+              <li>
+                <a href="#">Xbox</a>
+              </li>
+              <li>
+                <a href="#">Nintendo</a>
+              </li>
+              <li>
+                <a href="#">PC-Games</a>
+              </li>
+              <li id="sign">
+                <a href="#">Sign-in/Sign-up</a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="login">
@@ -50,13 +62,13 @@
       <div class="main">
         <div class="sort">
           sort the results by:
-          <select id="list" onchange="resetWidth()">
+          <select id="list">
             <option>Highest Score</option>
             <option>Release Date</option>
           </select>
         </div>
         <div class="posts">
-          <a href="/rev1.html" target="_blank">
+          <a href="/HTML/gow.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
                 <img src="/images/godOfWar.png" class="poster" />
@@ -89,9 +101,7 @@
               </div>
             </div>
           </a>
-          <a
-            href="https://www.ign.com/articles/the-legend-of-zelda-tears-of-the-kingdom-review"
-          >
+          <a href="/HTML/zelda1.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
                 <img src="/images/Zelda.jpg" class="poster" />

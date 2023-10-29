@@ -49,6 +49,7 @@ body {
 }
 
 .content {
+  overflow: hidden;
   box-sizing: border-box;
   width: 75vw;
   height: auto;

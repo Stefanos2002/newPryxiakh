@@ -49,7 +49,7 @@ body {
 }
 #back a {
   text-decoration: underline;
-  color: purple;
+  color: rgb(188, 132, 27);
 }
 
 .main {
@@ -176,15 +176,21 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   width: auto;
-  transform: translateX(-20%);
+  transform: translateX(-28%);
   font-size: 18px;
 }
-
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
 .dropdown-content a {
   line-height: 30px;
+  padding: 0px 10px;
 }
 
-.dropdown-content a:hover {
+.dropdown-content li:hover {
   background-color: grey;
 }
 
@@ -198,7 +204,6 @@ body {
 
 #sign {
   display: none;
-  color: rgb(202, 182, 25);
 }
 
 .logos {
@@ -334,7 +339,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .gen-comment {
-  padding: 2%;
+  padding: 10px 0 0 12px;
   background-color: rgba(38, 24, 24, 0.7);
   /* hide the text when it overflows */
   overflow: hidden;
@@ -344,7 +349,7 @@ input[type="search"]::-webkit-search-cancel-button {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-variant: small-caps;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 a {
@@ -432,11 +437,14 @@ a {
   .container {
     height: auto;
   }
-  .search-container {
-    margin-left: 16%;
-  }
+
   #sign {
     display: block;
+    text-wrap: nowrap;
+    background-color: whitesmoke;
+  }
+  #sign a {
+    color: black;
   }
   #sign-up::after {
     top: 22px;
@@ -451,6 +459,13 @@ a {
     font-size: 16px;
     padding-left: 18px;
     height: 2.1em;
+  }
+  .dropdown-content {
+    transform: translateX(-60%);
+    font-size: 16px;
+  }
+  .return-btn {
+    width: auto;
   }
 }
 /* cell view */
@@ -470,12 +485,20 @@ a {
     padding: 2%;
   }
   .sort {
-    font-size: 24px;
+    font-size: 27px;
     flex-direction: column;
+    top: 4em;
   }
   #list {
     font-size: 16px;
     margin: 0 auto;
+    padding: 7px 7px 7px 0;
     width: 8.3em;
+  }
+}
+
+@media (max-width: 295px) {
+  #bar {
+    width: 165px;
   }
 }
