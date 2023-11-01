@@ -26,7 +26,7 @@ body {
   padding: 10px 20px;
   padding-top: 20px;
   font-size: 1.1rem;
-  margin-bottom: -20px;
+  margin-bottom: 10px;
   transform: translateY(-40%);
 }
 .return a {
@@ -51,7 +51,7 @@ body {
 .content {
   overflow: hidden;
   box-sizing: border-box;
-  width: 75vw;
+  width: 100vw;
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -61,7 +61,7 @@ body {
   padding-bottom: 40px;
 }
 .content > * {
-  max-width: calc(110% - 40px);
+  max-width: calc(85% - 40px);
 }
 
 .header {
@@ -76,19 +76,22 @@ body {
 }
 
 .img1 {
-  width: 50em;
+  width: 60em;
+}
+#exploration2 {
+  margin-top: 5px;
 }
 
 .text {
-  font-size: 18px;
+  font-size: 20px;
   color: white;
-  line-height: 1.7rem;
-  background-color: rgba(73, 61, 61, 0.5);
+  line-height: 2rem;
+  background-color: rgba(73, 61, 61, 0.8);
   border-radius: 10px;
   /* text-align: justify; */
   padding: 1rem;
   height: auto;
-  width: 50rem;
+  width: 60rem;
   margin-top: 0px;
   margin-bottom: 3px;
 }
@@ -96,13 +99,16 @@ body {
 .text.text4 {
   margin-top: 10px;
 }
+.text.textplus {
+  margin-bottom: 10px;
+}
 
 video {
-  width: 49rem;
+  width: 57rem;
   height: auto;
   object-fit: contain;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .quote-container {
@@ -135,17 +141,28 @@ video {
   width: 100%;
 }
 
+.pros-cons {
+  text-align: left;
+}
+.text.text11,
+.text.text12 {
+  line-height: 1.5em;
+  width: 21em;
+  padding-left: 2em;
+  font-size: 22px;
+}
+
 #angry {
   width: 52rem;
   margin-top: 60px;
 }
-.header.head3 {
-  color: rgb(95, 4, 4);
+/* .header.head3 {
+  color: rgb(39, 69, 7);
   text-shadow: 3px 1px 10px #d7caca, -1px -1px 5px #dfcfcf, 1px -1px 5px #cab9b9,
     -1px 1px 5px #c7adad, 1px 1px 2px #d6c2c2;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
+} */
 .text.text6 {
   margin-top: 5px;
 }
@@ -176,10 +193,10 @@ video {
 }
 
 .text.rate {
-  background-color: rgb(91, 9, 9);
+  background-color: rgb(97, 63, 5);
   width: 4rem;
   border-radius: 10rem 0rem 0rem 10rem;
-  padding: 1.5rem 3rem;
+  padding: 1.4rem 3rem;
   font-size: 3rem;
   display: flex;
   justify-content: center;
@@ -195,13 +212,13 @@ video {
   align-items: center;
   font-size: 2rem;
   background-color: rgb(247, 247, 243);
-  color: rgb(92, 16, 16);
+  color: rgb(97, 63, 5);
   font-weight: bold;
 }
 .text-sub {
   position: absolute;
   font-size: 15px;
-  color: rgb(92, 16, 16);
+  color: rgb(97, 63, 5);
   bottom: 6px;
   right: 0;
 }
@@ -265,10 +282,5 @@ video {
   }
   .return a:hover::after {
     width: 40.5%;
-  }
-  video,
-  #angry,
-  .quote-container {
-    max-width: calc(125% - 40px) !important;
   }
 }
