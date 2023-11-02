@@ -51,7 +51,7 @@ body {
 .content {
   overflow: hidden;
   box-sizing: border-box;
-  width: 75vw;
+  width: 85vw;
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -61,7 +61,7 @@ body {
   padding-bottom: 40px;
 }
 .content > * {
-  max-width: calc(110% - 40px);
+  max-width: calc(100% - 40px);
 }
 
 .header {
@@ -72,6 +72,7 @@ body {
   font-size: 2.5rem;
   width: auto;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .text {
@@ -214,18 +215,18 @@ video {
 }
 @media (max-width: 600px) {
   .text {
-    font-size: 16px;
+    font-size: 18px;
   }
   .header {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
   .rating {
     margin-top: 1.5rem;
-    width: 16rem;
+    width: 17rem;
   }
   .text.rate {
     font-size: 2rem;
-    padding: 15px;
+    padding: 0.8rem 1rem;
   }
   .text.text10 {
     font-size: 1.5rem;

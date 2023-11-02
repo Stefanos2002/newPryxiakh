@@ -51,7 +51,7 @@ body {
 .content {
   overflow: hidden;
   box-sizing: border-box;
-  width: 100vw;
+  width: 85vw;
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -61,7 +61,7 @@ body {
   padding-bottom: 40px;
 }
 .content > * {
-  max-width: calc(85% - 40px);
+  max-width: calc(100% - 40px);
 }
 
 .header {
@@ -72,11 +72,11 @@ body {
   font-size: 2.5rem;
   width: auto;
   margin-bottom: 5px;
-  /* text-align: center; */
+  text-align: center;
 }
 
 .img1 {
-  width: 60em;
+  width: 52em;
 }
 #exploration2 {
   margin-top: 5px;
@@ -88,10 +88,9 @@ body {
   line-height: 2rem;
   background-color: rgba(73, 61, 61, 0.8);
   border-radius: 10px;
-  /* text-align: justify; */
   padding: 1rem;
   height: auto;
-  width: 60rem;
+  width: 52rem;
   margin-top: 0px;
   margin-bottom: 3px;
 }
@@ -104,13 +103,15 @@ body {
 }
 
 video {
-  width: 57rem;
+  width: 50rem;
   height: auto;
   object-fit: contain;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.text.text9 {
+  width: 35em;
+}
 .quote-container {
   width: 54rem;
   margin-top: 4rem;
@@ -141,14 +142,15 @@ video {
   width: 100%;
 }
 
-.pros-cons {
-  text-align: left;
+.pros-cons > * {
+  max-width: calc(100% - 40px);
 }
+
 .text.text11,
 .text.text12 {
   line-height: 1.5em;
-  width: 21em;
-  padding-left: 2em;
+  width: 20em;
+  padding-left: 1.5em;
   font-size: 22px;
 }
 
@@ -190,6 +192,8 @@ video {
   width: 25rem;
   margin-top: 3rem;
   right: 15px;
+  min-width: 243.55px;
+  /* margin-right: 4px; */
 }
 
 .text.rate {
@@ -240,10 +244,17 @@ video {
 }
 @media (max-width: 600px) {
   .text {
-    font-size: 16px;
+    font-size: 18px;
+  }
+  .text.text11,
+  .text.text12 {
+    line-height: 1.5em;
+    width: 20em;
+    padding-left: 1.5em;
+    font-size: 20px;
   }
   .header {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
   .rating {
     margin-top: 1.5rem;
@@ -251,7 +262,7 @@ video {
   }
   .text.rate {
     font-size: 2rem;
-    padding: 15px;
+    padding: 0.8rem 1.3rem;
   }
   .text.text10 {
     font-size: 1.5rem;
