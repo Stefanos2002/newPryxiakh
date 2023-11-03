@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url(/images/zelda.jpg);
+  background-image: url(/images/Dredge.png);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -43,11 +43,11 @@ body {
   background-color: whitesmoke;
   transition: width 0.4s ease;
   top: 39px;
-  left: 9.5rem;
+  left: 11.4rem;
 }
 
 .return a:hover::after {
-  width: 40%;
+  width: 37%;
 }
 
 .content {
