@@ -222,7 +222,7 @@ video {
   }
   .rating {
     margin-top: 1.5rem;
-    width: 17rem;
+    width: 16rem;
   }
   .text.rate {
     font-size: 2rem;
@@ -262,5 +262,22 @@ video {
   #angry,
   .quote-container {
     max-width: calc(125% - 40px) !important;
+  }
+}
+
+@media (max-width: 330px) {
+  .rating {
+    width: 12.5rem;
+  }
+  .text.rate {
+    font-size: 1.5rem;
+    padding: 0.8rem 0.8rem;
+    width: 3.5rem;
+  }
+  .text.text10 {
+    font-size: 1.2rem;
+  }
+  .text-sub {
+    font-size: 10px;
   }
 }

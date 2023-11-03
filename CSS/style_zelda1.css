@@ -28,7 +28,9 @@ body {
   font-size: 1.1rem;
   margin-bottom: 10px;
   transform: translateY(-40%);
+  text-wrap: nowrap;
 }
+
 .return a {
   text-decoration: none;
   color: whitesmoke;
@@ -41,11 +43,11 @@ body {
   background-color: whitesmoke;
   transition: width 0.4s ease;
   top: 39px;
-  left: 10.3rem;
+  left: 9.5rem;
 }
 
 .return a:hover::after {
-  width: 39%;
+  width: 40%;
 }
 
 .content {
@@ -192,12 +194,11 @@ video {
   width: 25rem;
   margin-top: 3rem;
   right: 15px;
-  min-width: 243.55px;
-  /* margin-right: 4px; */
+  /* min-width: 243.55px; */
 }
 
 .text.rate {
-  background-color: rgb(97, 63, 5);
+  background-color: rgb(92, 16, 16);
   width: 4rem;
   border-radius: 10rem 0rem 0rem 10rem;
   padding: 1.4rem 3rem;
@@ -216,13 +217,13 @@ video {
   align-items: center;
   font-size: 2rem;
   background-color: rgb(247, 247, 243);
-  color: rgb(97, 63, 5);
+  color: rgb(92, 16, 16);
   font-weight: bold;
 }
 .text-sub {
   position: absolute;
   font-size: 15px;
-  color: rgb(97, 63, 5);
+  color: rgb(92, 16, 16);
   bottom: 6px;
   right: 0;
 }
@@ -285,13 +286,30 @@ video {
     content: "";
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 1.5px;
     background-color: whitesmoke;
     transition: width 0.4s ease;
     top: 36px;
-    left: 7.5rem;
+    left: 8rem;
   }
   .return a:hover::after {
-    width: 40.5%;
+    width: 38.5%;
+  }
+}
+
+@media (max-width: 330px) {
+  .rating {
+    width: 12.5rem;
+  }
+  .text.rate {
+    font-size: 1.5rem;
+    padding: 0.8rem 0.8rem;
+    width: 3.5rem;
+  }
+  .text.text10 {
+    font-size: 1.2rem;
+  }
+  .text-sub {
+    font-size: 10px;
   }
 }
