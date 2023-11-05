@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url(/images/Spiderman.jpg);
+  background-image: url(/images/sp_back.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -92,7 +92,7 @@ body {
 }
 
 .img1 {
-  width: 52em;
+  width: 48em;
 }
 #exploration2 {
   margin-top: 5px;
@@ -110,9 +110,12 @@ body {
   margin-top: 0px;
   margin-bottom: 3px;
 }
-.text.text2,
+/* .text.text2,
 .text.text4 {
-  margin-top: 10px;
+  margin-top: 40px;
+} */
+.text.text1 {
+  margin-bottom: 5px;
 }
 .text.textplus {
   margin-bottom: 10px;
