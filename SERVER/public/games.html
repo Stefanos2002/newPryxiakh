@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/CSS/style_games.css" />
-    <!-- <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet" /> -->
-    <script src="/JS/fun.js"></script>
+    <link rel="stylesheet" href="CSS/style_games.css" />
+    <script src="JS/fun.js"></script>
     <title>Home</title>
   </head>
   <body>
@@ -15,24 +14,24 @@
           Go <a href="#">back</a> to choose a different category
         </h3>
         <button class="return-btn">
-          <img src="/images/return.png" alt="return_icon" id="return" />
+          <img src="images/return.png" alt="return_icon" id="return" />
         </button>
         <div class="search-logos">
           <div class="search-container">
             <input type="search" id="bar" placeholder="Αναζητηση" />
-            <img src="/images/Search.png" alt="search" id="controller-img" />
-            <img src="/images/X.png" alt="Xmen" id="xicon" />
+            <img src="images/Search.png" alt="search" id="controller-img" />
+            <img src="images/X.png" alt="Xmen" id="xicon" />
           </div>
           <div class="logos">
-            <img src="/images/ps.png" alt="Playstation" id="ps" />
-            <img src="/images/xbox.png" alt="Xbox" id="xbox" />
-            <img src="/images/switch.png" alt="Nintendo" id="nintendo" />
-            <img src="/images/pc.png" alt="PC-Games" id="pc" />
+            <img src="images/ps.png" alt="Playstation" id="ps" />
+            <img src="images/xbox.png" alt="Xbox" id="xbox" />
+            <img src="images/switch.png" alt="Nintendo" id="nintendo" />
+            <img src="images/pc.png" alt="PC-Games" id="pc" />
           </div>
         </div>
         <div class="dropdown">
           <button class="dropbtn">
-            <img src="/images/menu.png" alt="menu" id="Menu-img" />
+            <img src="images/menu.png" alt="menu" id="Menu-img" />
           </button>
           <div class="dropdown-content">
             <ul>
@@ -61,17 +60,17 @@
       </div>
       <div class="main">
         <div class="sort">
-          sort the results by:
-          <select id="list">
-            <option>Highest Score</option>
-            <option>Release Date</option>
+          <label for="list">Sort the results by:</label>
+          <select id="list" name="sortOrder">
+            <option value="highestScore">Highest Score</option>
+            <option value="releaseDate">Release Date</option>
           </select>
         </div>
         <div class="posts">
-          <a href="/HTML/gow.html" target="_blank">
+          <a href="gow.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
-                <img src="/images/godOfWar.png" class="poster" />
+                <img src="images/godOfWar.png" alt="godofwar" class="poster" />
                 <span class="game-desrc">God Of War</span>
               </div>
               <div class="gen-comment">
@@ -87,10 +86,10 @@
               </div>
             </div>
           </a>
-          <a href="/HTML/zelda1.html" target="_blank">
+          <a href="zelda1.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
-                <img src="/images/Zelda.jpg" class="poster" />
+                <img src="images/Zelda.jpg" alt="zelda" class="poster" />
                 <span class="game-desrc"
                   >The Legend Of Zelda: Breath of the Wild</span
                 >
@@ -109,10 +108,10 @@
               </div>
             </div>
           </a>
-          <a href="/HTML/dredge.html" target="_blank">
+          <a href="dredge.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
-                <img src="/images/Dredge.png" class="poster" />
+                <img src="images/Dredge.png" alt="dredge" class="poster" />
                 <span class="game-desrc">Dredge</span>
               </div>
               <div class="gen-comment">
@@ -129,10 +128,14 @@
               </div>
             </div>
           </a>
-          <a href="/html/Marvel's-Spiderman.html" target="_blank">
+          <a href="Marvel's-Spiderman.html" target="_blank">
             <div class="gen">
               <div class="gen-img">
-                <img src="/images/sp_poster.jpg" class="poster" />
+                <img
+                  src="images/sp_poster.jpg"
+                  alt="spiderman"
+                  class="poster"
+                />
                 <span class="game-desrc">Marvel's Spider-Man 2</span>
               </div>
               <div class="gen-comment">
@@ -153,7 +156,7 @@
             >
             <div class="gen">
               <div class="gen-img">
-                <img src="/images/DiabloIV.png" class="poster" />
+                <img src="images/DiabloIV.png" alt="Diablo" class="poster" />
                 <span class="game-desrc">Diablo-IV</span>
               </div>
               <div class="gen-comment">

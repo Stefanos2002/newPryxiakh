@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url(/images/zelda.jpg);
+  background-image: url(../images/zelda.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

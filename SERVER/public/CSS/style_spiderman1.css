@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url(/images/sp_back.jpeg);
+  background-image: url(../images/sp_back.jpeg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
