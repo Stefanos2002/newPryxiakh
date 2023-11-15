@@ -145,9 +145,12 @@ video {
   padding-left: 1.5em;
   font-size: 22px;
 }
-
+.text.text5 {
+  margin-bottom: 0px;
+}
 .text.text6 {
   margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .header.head-final {
