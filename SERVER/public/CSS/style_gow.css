@@ -1,6 +1,6 @@
 body::before {
   content: "";
-  background-image: url(../images/gow_b.jpg);
+  background-image: url(https://i.pinimg.com/originals/88/5e/fd/885efdc9b9954df0e50e3f16ecacd4a4.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -119,10 +119,10 @@ body {
   width: 100%;
 }
 
-#angry {
+/* #angry {
   width: 52rem;
   margin-top: 60px;
-}
+} */
 .header.head3 {
   color: rgb(95, 4, 4);
   text-shadow: 3px 1px 10px #d7caca, -1px -1px 5px #dfcfcf, 1px -1px 5px #cab9b9,
@@ -250,8 +250,7 @@ body {
   .return a:hover::after {
     width: 40.5%;
   }
-  video,
-  #angry,
+
   .quote-container {
     max-width: calc(125% - 40px) !important;
   }
