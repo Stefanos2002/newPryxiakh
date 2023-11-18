@@ -89,14 +89,6 @@ body {
   margin-bottom: 3px;
 }
 
-video {
-  width: 49rem;
-  height: auto;
-  object-fit: contain;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-
 .quote-container {
   width: 54rem;
   margin-top: 4rem;

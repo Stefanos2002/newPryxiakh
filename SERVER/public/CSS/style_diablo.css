@@ -123,10 +123,7 @@ body {
   margin-bottom: 10px;
 }
 
-video {
-  width: 50rem;
-  height: auto;
-  object-fit: contain;
+iframe {
   margin-top: 10px;
   margin-bottom: 10px;
 }

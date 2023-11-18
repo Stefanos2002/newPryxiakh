@@ -101,13 +101,6 @@ body {
   margin-bottom: 10px;
 }
 
-video {
-  width: 50rem;
-  height: auto;
-  object-fit: contain;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 .text.text9 {
   width: 35em;
 }
