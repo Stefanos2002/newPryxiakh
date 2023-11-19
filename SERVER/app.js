@@ -25,66 +25,86 @@ const counterSchema = new mongoose.Schema({
 });
 
 const Counter = mongoose.model("Counter", counterSchema);
-Counter.create({ _id: "userId", sequence_value: 0 })
-  .then(() => {
-    console.log("Counter initialized");
-  })
-  .catch((err) => {
-    console.error("Counter initialization error:", err);
-  });
-app.post("/sign_up", async (req, res) => {
-  let name = req.body.name;
-  let email = req.body.email;
-  let pass = req.body.password;
-
+async function initializeCounter() {
   try {
-    const counter = await Counter.findOneAndUpdate(
-      { _id: "userId" },
-      { $inc: { sequence_value: 1 } },
-      { new: true, upsert: true }
-    );
+    const counter = await Counter.findOne({ _id: "userId" });
 
-    const data = {
-      UID: counter.sequence_value,
-      name: name,
-      email: email,
-      password: pass,
-    };
+    if (!counter) {
+      // Counter document with _id: "userId" doesn't exist, so create it
+      await Counter.create({ _id: "userId", sequence_value: 0 });
+      console.log("Counter initialized");
+    }
 
-    await db.collection("Users").insertOne(data);
-    console.log("Record inserted successfully");
-    res.redirect("signup_success.html");
+    // Now that the Counter is guaranteed to exist, you can proceed with the rest of your code
+    startServer();
   } catch (err) {
-    console.error("Error:", err);
-    res.status(500).send("Error saving data to MongoDB");
+    console.error("Error initializing Counter:", err);
   }
-});
+}
+initializeCounter();
 
-app.get("/", (req, res) => {
-  res.set({
-    "Allow-access-Allow-Origin": "*",
+// Counter.create({ _id: "userId", sequence_value: 0 })
+//   .then(() => {
+//     console.log("Counter initialized");
+//   })
+//   .catch((err) => {
+//     console.error("Counter initialization error:", err);
+//   });
+function startServer() {
+  app.post("/sign_up", async (req, res) => {
+    let name = req.body.name;
+    let email = req.body.email;
+    let pass = req.body.password;
+
+    try {
+      const counter = await Counter.findOneAndUpdate(
+        { _id: "userId" },
+        { $inc: { sequence_value: 1 } },
+        { new: true, upsert: true }
+      );
+
+      const data = {
+        UID: counter.sequence_value,
+        name: name,
+        email: email,
+        password: pass,
+      };
+
+      await db.collection("Users").insertOne(data);
+      console.log("Record inserted successfully");
+      res.redirect("signup_success.html");
+    } catch (err) {
+      console.error("Error:", err);
+      res.status(500).send("Error saving data to MongoDB");
+    }
   });
-  // return res.redirect("index.html");
-});
 
-app.use("/games", express.static(path.join(__dirname, "/public")));
+  app.get("/", (req, res) => {
+    res.set({
+      "Allow-access-Allow-Origin": "*",
+    });
+    // return res.redirect("index.html");
+  });
 
-//specific path
-app.get("/games", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/games.html"));
-});
+  app.use("/games", express.static(path.join(__dirname, "/public")));
 
-app.get("/games/:gameName", (req, res) => {
-  const gameName = req.params.gameName;
-  const filePath = path.join(__dirname, `/public/${gameName}.html`);
-  res.sendFile(filePath);
-});
+  //specific path
+  app.get("/games", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/games.html"));
+  });
 
-app.use((req, res) => {
-  res.status(404);
-  res.send(`<h1>Error 404: Resource not found</h1>`);
-});
+  app.get("/games/:gameName", (req, res) => {
+    const gameName = req.params.gameName;
+    const filePath = path.join(__dirname, `/public/${gameName}.html`);
+    res.sendFile(filePath);
+  });
 
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
-});
+  app.use((req, res) => {
+    res.status(404);
+    res.send(`<h1>Error 404: Resource not found</h1>`);
+  });
+
+  app.listen(3000, () => {
+    console.log("Listening on port 3000");
+  });
+}
