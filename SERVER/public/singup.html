@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/signUp.css">
+    <script src="./JS/signUpVerification.js"></script>
+    <title>Sign-Up</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="credentials">
+                <ul id="error"></ul>
+                <h1>Sign-Up</h1>
+                <form action="/sign_up" method="post" id="form" class="form" autocomplete="on">
+                        <div class="credential-div">
+                            <label for="Username" class="form-field">Username:</label><br>
+                            <input type="text" class="input-field" id="Username" name="Username"
+                                placeholder="Ameabambambambam"><br>
+                        </div>
+                        <div class="credential-div">
+                            <label for="email" class="form-field">Email:</label><br>
+                            <input type="text" class="input-field" id="email" name="email"
+                                placeholder="bimbim@gmail.com"><br>
+                        </div>
+                        <div class="credential-div">
+                            <label for="password" class="form-field">Password:</label><br>
+                            <input type="password" class="input-field" id="password" name="password"
+                                placeholder="********"><br>
+                        </div>
+                        <div class="credential-div">
+                            <label for="password-verification" class="form-field">Verify Password:</label><br>
+                            <input type="password" class="input-field" id="password-verification"
+                                name="password-verification" placeholder="********"><br>
+                        </div>
+                        <div class="credential-div">
+                            <input type="submit" value="submit" id="submit">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
