@@ -12,7 +12,7 @@ app.use(
   })
 );
 
-mongoose.connect("mongodb://127.0.0.1:27017/Database");
+mongoose.connect("mongodb://localhost/Database");
 
 let db = mongoose.connection;
 
@@ -44,7 +44,6 @@ async function initializeCounter() {
     console.error("Error initializing Counter:", err);
   }
 }
-initializeCounter();
 
 function startServer() {
   app.post("/sign_up", async (req, res) => {
@@ -63,17 +62,36 @@ function startServer() {
       errors.push("Username must be at least 8 characters long");
 
     if (errors.length > 0) {
-      return res.status(400).json({ errors });
+      // Check if the request accepts HTML
+      if (req.accepts("html")) {
+        return res.status(400).send(`<h1>${errors.join("<br>")}</h1>`);
+      } else {
+        // If the request accepts JSON, send JSON response
+        return res.status(400).json({ errors });
+      }
     } else {
       const data = {
         username: username,
         email: email,
         password: pass,
       };
+      try {
+        // Assuming you're using the MongoDB driver directly
+        await db.collection("Users").insertOne(data);
+        console.log("Record inserted successfully");
 
-      await db.collection("Users").insertOne(data);
-      console.log("Record inserted successfully");
-      return res.status(200).json({ message: "Signup successful" });
+        // Check if the request accepts HTML
+        if (req.accepts("html")) {
+          // Redirect or render an HTML success page
+          return res.redirect("/success");
+        } else {
+          // If the request accepts JSON, send JSON response
+          return res.status(200).json({ message: "Signup successful" });
+        }
+      } catch (error) {
+        console.error("Error inserting user:", error);
+        return res.status(500).json({ error: "Internal Server Error" });
+      }
     }
   });
 
@@ -106,3 +124,5 @@ app.use((req, res) => {
 app.listen(3000, () => {
   console.log("Listening on port 3000");
 });
+
+initializeCounter();

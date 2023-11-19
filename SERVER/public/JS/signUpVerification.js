@@ -1,35 +1,37 @@
-const form = document.getElementById('form');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form");
 
-document.addEventListener('DOMContentLoaded', () => {
-
-form.addEventListener('submit',async (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
 
     try {
-        const response = await fetch('/sign_up', {
-            method: 'POST',
-            body: formData
-        });
+      const response = await fetch("/sign_up", {
+        method: "POST",
+        body: formData,
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if(response.ok) {
-            alert(data.message);
+      if (response.ok) {
+        alert(data.message);
+      } else {
+        const errorList = document.getElementById("error");
+        errorList.innerHTML = "";
+
+        if (data.errors) {
+          data.errors.forEach((error) => {
+            const li = document.createElement("li");
+            li.innerText = error;
+            errorList.appendChild(li);
+          });
+        } else {
+          console.error("Unexpected response format:", data);
         }
-        else {
-            const errorList = document.getElementById('error');
-            errorList.innerHTML = '';   
-
-            data.errors.forEach(error => {
-                const li = document.createElement('li');
-                li.innerText = error;
-                errorList.appendChild(li);
-            });
-        }
-    } catch(err) {
-        console.error(`Error: ${err}`);
+      }
+    } catch (err) {
+      console.error(`Error: ${err}`);
     }
-});
+  });
 });
