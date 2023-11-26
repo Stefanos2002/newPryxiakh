@@ -1,19 +1,21 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
-const path = require("path");
-const app = express();
+const express = require("express"); //express.js framework
+const bodyParser = require("body-parser"); //commonly used to handle Form Submissions and other type of data sent in the request body
+const mongoose = require("mongoose"); //an ODM (Object Data Modeling) library for MongoDB and Node.js. It simplifies working with monogoDB dbs with a schema-based solution
+const path = require("path"); //a built-in module in Node.js. The "path" module provides utilities for working with file and directory paths
 
-app.use(bodyParser.json());
-app.use(express.static("public"));
+const app = express(); //this line creates an instance of the Express application.'app' will be used to configure routes, middleware, and other settings for the web server.
+
+app.use(bodyParser.json()); //It adds a middleware function that parses the request body if the content type is JSON
+app.use(express.static("public")); //sets up a static file server to serve files from the "public" directory.
+
 app.use(
+  //enables parsing of URL-encoded data, which is commonly used in form submissions.
   bodyParser.urlencoded({
-    extended: true,
+    extended: true, //this option allows parsing of nested objects, which is useful when dealing with more complex form data.
   })
 );
 
 mongoose.connect("mongodb://localhost/Database");
-
 let db = mongoose.connection;
 
 db.on("error", () => console.log("Error in connecting to database"));
