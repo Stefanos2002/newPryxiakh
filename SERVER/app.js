@@ -21,15 +21,18 @@ let db = mongoose.connection;
 db.on("error", () => console.log("Error in connecting to database"));
 db.once("open", () => console.log("Connected to database"));
 
+//a schema is a way to define the structure and constraints for the documents that will be stored in the MongoDB collection
+//the specific schema is used to implement an auto incremented counter in MongoDB
 const counterSchema = new mongoose.Schema({
-  _id: String,
-  sequence_value: Number,
+  _id: String, //specifying the data type for id
+  sequence_value: Number, //incremented each time a new identifier is created
 });
 
 //creating counter
 const Counter = mongoose.model("Counter", counterSchema);
 
 //this is the part that fixes counter and userId
+//an async function returns a promise(an object that represents the completion or failure of the async function)
 async function initializeCounter() {
   try {
     const counter = await Counter.findOne({ _id: "userId" });
