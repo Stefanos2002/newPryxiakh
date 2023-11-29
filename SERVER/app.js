@@ -65,13 +65,13 @@ async function initializeCounter() {
     }
 
     // Now that the Counter is guaranteed to exist, you can proceed with the rest of your code
-    startServer();
+    SignUp();
   } catch (err) {
     console.error("Error initializing Counter:", err);
   }
 }
 
-function startServer() {
+function SignUp() {
   app.post("/sign_up", async (req, res) => {
     //it defines a route for handling HTTP POST requests to the "/sign_up" endpoint.
     //next is extracting data from the request body
