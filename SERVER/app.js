@@ -139,8 +139,7 @@ app.get("/games/:gameName", (req, res) => {
 });
 
 app.use((req, res) => {
-  res.status(404);
-  res.send(`<h1>Error 404: Resource not found</h1>`); //the issue is here
+  res.status(404).json({ error: "Resource not found" });
 });
 
 app.listen(3000, () => {
