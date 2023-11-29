@@ -28,8 +28,29 @@ const counterSchema = new mongoose.Schema({
   sequence_value: Number, //incremented each time a new identifier is created
 });
 
-//creating counter
+//using a userSchema with Mongoose to store users, instead of directly accessing the MongoDB driver
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    minlength: 8,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+    minlength: 8,
+  },
+});
+
+//creating a model for Counter
 const Counter = mongoose.model("Counter", counterSchema);
+// Create a model based on the userSchema
+const User = mongoose.model("User", userSchema);
 
 //this is the part that fixes duplicate values of userId
 //an async function returns a promise(an object that represents the completion or failure of the async function)
@@ -69,45 +90,39 @@ function startServer() {
       errors.push("Username must be at least 8 characters long");
 
     if (errors.length > 0) {
-      // Check if the request accepts HTML
-      if (req.accepts("html")) {
-        return res.status(400).send(`<h1>${errors.join("<br>")}</h1>`);
-      } else {
-        // If the request accepts JSON, send JSON response
-        return res.status(400).json({ errors });
-      }
-    } else {
+      // If the request accepts JSON, send JSON response
+      //this is the part that handles client-side errors, which we declared above
+      return res.status(400).json({ errors });
+    }
+    //else, if everything works great and i dont have any errors in my form
+    else {
       const data = {
         username: username,
         email: email,
         password: pass,
       };
       try {
-        // Assuming you're using the MongoDB driver directly
-        await db.collection("Users").insertOne(data);
+        // Create a new user document using the User model by mongoose
+        const newUser = await User.create(data);
         console.log("Record inserted successfully");
 
-        // Check if the request accepts HTML
-        if (req.accepts("html")) {
-          // Redirect or render an HTML success page
-          return res.redirect("/success");
-        } else {
-          // If the request accepts JSON, send JSON response
-          return res.status(200).json({ message: "Signup successful" });
-        }
+        // If the request accepts JSON, send JSON response
+        return res.status(200).json({ message: "Signup successful" });
       } catch (error) {
+        //this is the part that handles server side errors
         console.error("Error inserting user:", error);
         return res.status(500).json({ error: "Internal Server Error" });
       }
     }
   });
 
-  app.get("/", (req, res) => {
-    res.set({
-      "Allow-access-Allow-Origin": "*",
-    });
-    // return res.redirect("index.html");
-  });
+  // app.get("/", (req, res) => {
+  //   res.set({
+  //this is a CORS header, used for cross origin request. Neccessary if frontend and backend are on different domains
+  //     "Access-Control-Allow-Origin": "*",
+  //   });
+  //   // return res.redirect("index.html");
+  // });
 }
 
 app.use("/games", express.static(path.join(__dirname, "/public")));
@@ -125,7 +140,7 @@ app.get("/games/:gameName", (req, res) => {
 
 app.use((req, res) => {
   res.status(404);
-  res.send(`<h1>Error 404: Resource not found</h1>`);
+  res.send(`<h1>Error 404: Resource not found</h1>`); //the issue is here
 });
 
 app.listen(3000, () => {
