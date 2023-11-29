@@ -5,6 +5,11 @@
   margin: 0;
 }
 
+.credential-div:nth-child(5) {
+  width: 10rem;
+  text-align: center;
+}
+
 #submit {
   font-size: 25px;
   background-color: whitesmoke;
@@ -46,9 +51,24 @@ body {
   margin: 0 auto;
 }
 
+.container {
+  padding-bottom: 10px;
+  background-color: rgba(12, 12, 12, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(56, 55, 61, 0.6);
+  border: 1px solid black;
+  position: absolute;
+  margin: 0 auto;
+  height: 35rem;
+  width: 30rem;
+}
+
 h1 {
-  color: whitesmoke;
   font-size: 3.5rem;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
 .form-field {
@@ -59,7 +79,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .input-field {
@@ -71,20 +91,9 @@ h1 {
   font-size: 20px;
 }
 
-.container {
-  padding: 30px;
-  background-color: rgba(12, 12, 12, 0.7);
-  border-radius: 20px;
-  box-shadow: 0 0 40px rgba(56, 55, 61, 0.6);
-  border: 1px solid black;
-  position: absolute;
-  margin: 0 auto;
-  height: 35rem;
-  width: 30rem;
-}
-
 .form {
-  text-align: center;
+  /* text-align: center; */
+  align-items: center;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -97,10 +106,10 @@ form > .credential-div {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px rgb(12,12,12) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgb(12, 12, 12) inset;
   -webkit-text-fill-color: whitesmoke !important;
 }
 
-input:-webkit-autofill:hover{
-    font-size: 20px !important; 
+input:-webkit-autofill:hover {
+  font-size: 20px !important;
 }

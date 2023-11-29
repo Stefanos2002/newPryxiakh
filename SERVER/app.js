@@ -9,7 +9,7 @@ app.use(bodyParser.json()); //It adds a middleware function that parses the requ
 app.use(express.static("public")); //sets up a static file server to serve files from the "public" directory.
 
 app.use(
-  //enables parsing of URL-encoded data, which is commonly used in form submissions.
+  //enables parsing of URL-encoded data. Upon submitting a form on a website, the data is sent to the server in the URL-encoded format..
   bodyParser.urlencoded({
     extended: true, //this option allows parsing of nested objects, which is useful when dealing with more complex form data.
   })
@@ -31,7 +31,7 @@ const counterSchema = new mongoose.Schema({
 //creating counter
 const Counter = mongoose.model("Counter", counterSchema);
 
-//this is the part that fixes counter and userId
+//this is the part that fixes duplicate values of userId
 //an async function returns a promise(an object that represents the completion or failure of the async function)
 async function initializeCounter() {
   try {
@@ -52,6 +52,8 @@ async function initializeCounter() {
 
 function startServer() {
   app.post("/sign_up", async (req, res) => {
+    //it defines a route for handling HTTP POST requests to the "/sign_up" endpoint.
+    //next is extracting data from the request body
     let username = req.body.Username;
     let email = req.body.email;
     let pass = req.body.password;
