@@ -6,7 +6,6 @@ const path = require("path"); //a built-in module in Node.js. The "path" module 
 const app = express(); //this line creates an instance of the Express application.'app' will be used to configure routes, middleware, and other settings for the web server.
 
 app.use(bodyParser.json()); //It adds a middleware function that parses the request body if the content type is JSON
-app.use(express.static("public")); //sets up a static file server to serve files from the "public" directory.
 
 app.use(
   //enables parsing of URL-encoded data. Upon submitting a form on a website, the data is sent to the server in the URL-encoded format..
@@ -14,6 +13,7 @@ app.use(
     extended: true, //this option allows parsing of nested objects, which is useful when dealing with more complex form data.
   })
 );
+app.use(express.static("public")); //sets up a static file server to serve files from the "public" directory.
 
 mongoose.connect("mongodb://localhost/Database");
 let db = mongoose.connection;
@@ -52,6 +52,26 @@ const Counter = mongoose.model("Counter", counterSchema);
 // Create a model based on the userSchema
 const User = mongoose.model("User", userSchema);
 
+//this is the function that sets up the routes for the server to handle
+function setUpWebsiteRoutes(app) {
+  app.use("/games", express.static(path.join(__dirname, "/public")));
+
+  //specific path
+  app.get("/games", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/games.html"));
+  });
+
+  app.get("/games/:gameName", (req, res) => {
+    const gameName = req.params.gameName;
+    const filePath = path.join(__dirname, `/public/${gameName}.html`);
+    res.sendFile(filePath);
+  });
+
+  app.use((req, res) => {
+    res.status(404).json({ error: "Resource not found" });
+  });
+}
+
 //this is the part that fixes duplicate values of userId
 //an async function returns a promise(an object that represents the completion or failure of the async function)
 async function initializeCounter() {
@@ -64,8 +84,14 @@ async function initializeCounter() {
       console.log("Counter initialized");
     }
 
-    // Now that the Counter is guaranteed to exist, you can proceed with the rest of your code
-    SignUp();
+    setUpWebsiteRoutes(app);
+    //start the server
+    app.listen(3000, () => {
+      console.log("Listening on port 3000");
+
+      // Now that the server is started, you can proceed with the rest of your code
+      SignUp();
+    });
   } catch (err) {
     console.error("Error initializing Counter:", err);
   }
@@ -118,32 +144,10 @@ function SignUp() {
 
   // app.get("/", (req, res) => {
   //   res.set({
-  //this is a CORS header, used for cross origin request. Neccessary if frontend and backend are on different domains
+  //     //this is a CORS header, used for cross origin request. Neccessary if frontend and backend are on different domains
   //     "Access-Control-Allow-Origin": "*",
   //   });
-  //   // return res.redirect("index.html");
+  //   return res.redirect("games.html");
   // });
 }
-
-app.use("/games", express.static(path.join(__dirname, "/public")));
-
-//specific path
-app.get("/games", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/games.html"));
-});
-
-app.get("/games/:gameName", (req, res) => {
-  const gameName = req.params.gameName;
-  const filePath = path.join(__dirname, `/public/${gameName}.html`);
-  res.sendFile(filePath);
-});
-
-app.use((req, res) => {
-  res.status(404).json({ error: "Resource not found" });
-});
-
-app.listen(3000, () => {
-  console.log("Listening on port 3000");
-});
-
 initializeCounter();
