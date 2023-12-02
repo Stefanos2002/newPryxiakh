@@ -67,9 +67,9 @@ function setUpWebsiteRoutes(app) {
     res.sendFile(filePath);
   });
 
-  app.use((req, res) => {
-    res.status(404).json({ error: "Resource not found" });
-  });
+  // app.use((req, res) => {
+  //   res.status(404).json({ error: "Resource not found" });
+  // });
 }
 
 //this is the part that fixes duplicate values of userId

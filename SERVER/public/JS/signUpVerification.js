@@ -14,11 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
+      const errorList = document.getElementById("error");
+      errorList.innerHTML = ""; // Clear previous error messages
+
       if (response.ok) {
-        alert(data.message);
+        console.log(data.message);
       } else {
-        const errorList = document.getElementById("error");
-        errorList.innerHTML = "";
+        // const errorList = document.getElementById("error");
+        // errorList.innerHTML = "";
 
         if (data.errors) {
           data.errors.forEach((error) => {
