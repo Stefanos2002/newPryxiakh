@@ -1,3 +1,4 @@
+//server-side code
 const express = require("express"); //express.js framework
 const bodyParser = require("body-parser"); //commonly used to handle Form Submissions and other type of data sent in the request body
 const mongoose = require("mongoose"); //an ODM (Object Data Modeling) library for MongoDB and Node.js. It simplifies working with monogoDB dbs with a schema-based solution

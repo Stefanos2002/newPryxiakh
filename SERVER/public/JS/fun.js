@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const controller = document.getElementById("controller-img");
   const list = document.getElementById("list");
 
+  //this is a functionallity code for the sorting category (for changing values)
   list.addEventListener("change", function () {
     list.classList.remove("expanded");
     list.blur();
