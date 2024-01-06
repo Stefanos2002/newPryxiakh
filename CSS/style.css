@@ -6,93 +6,78 @@ body {
   padding: 0;
   font-family: "Games", sans-serif;
   overflow-x: hidden;
-  overflow-y: visible;
   background-color: cornsilk;
 }
 
 .container {
-  top: 0;
-  /* container stays on top when scrolling down */
-  position: sticky;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
   background-color: black;
-  height: 55px;
-  z-index: 9999;
+  gap: 8rem;
+}
+.container > * {
+  max-width: calc(115% - 40px);
 }
 
 #title {
-  position: absolute;
   color: whitesmoke;
   font-size: 3rem;
   margin: 0;
   cursor: pointer;
 }
 
-/* logos of game industries */
-.logos #ps {
+.logos {
+  color: whitesmoke;
   position: absolute;
-  max-width: 34px;
-  top: 15px;
-  right: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-right: 4rem;
+  gap: 1.8rem;
+  top: 8px;
+  right: 0;
 }
 
-.logos #ps:hover {
+/* logos of game industries */
+#ps:hover,
+#xbox:hover,
+#nintendo:hover,
+#pc:hover {
   transform: scale(1.3);
 }
 
 .logos img {
-  max-width: 100%;
   transition: transform 0.3s ease;
 }
 
-.logos:hover img {
-  cursor: pointer;
+#ps {
+  max-width: 34px;
 }
-
-.logos #xbox {
-  position: absolute;
+#xbox {
   max-width: 30px;
-  top: 15px;
-  right: 20%;
 }
-
-.logos #xbox:hover {
-  transform: scale(1.3);
-}
-
-.logos #nintendo {
-  position: absolute;
+#nintendo {
   max-width: 36px;
-  top: 11px;
-  right: 14.5%;
 }
-
-.logos #nintendo:hover {
-  transform: scale(1.3);
-}
-
-.logos #pc {
-  position: absolute;
+#pc {
   max-width: 25px;
-  top: 11px;
-  right: 9.5%;
-}
-
-.logos #pc:hover {
-  transform: scale(1.3);
 }
 /*end of logos  */
 
 /* sign in/up part */
 .login {
-  position: absolute;
-  color: whitesmoke;
-  top: 11px;
-  right: 2%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
-.login:hover {
+.login:hover,
+.logos:hover img {
   cursor: pointer;
 }
 
@@ -110,9 +95,8 @@ body {
   bottom: 0;
   left: 0;
 }
-
 #sign-in::after {
-  bottom: 17px;
+  bottom: 18px;
   right: 0;
 }
 
@@ -123,47 +107,34 @@ body {
 /* end of sign-in/up */
 
 /* search bar */
-.search-bar {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  top: 0;
-  left: 30%;
-  min-width: 30%;
-}
-
-.search-bar #bar {
-  position: absolute;
+#bar {
   font-family: Arial, Helvetica, sans-serif;
   font-style: italic;
   border-radius: 15px;
-  width: 35vw;
   padding: 4px 2px 4px 22px;
   font-size: 18px;
+  margin-bottom: 2rem;
 }
 
-.search-bar #controller-img {
-  position: absolute;
+#controller-img {
   transition: 0.5s;
   width: 29px;
-  height: 22px;
-  left: 108.5%;
-  top: 5px;
+  height: auto;
 }
 
 /* this is for removing the default "x" icon */
-.search-bar input[type="search"]::-webkit-search-cancel-button {
+input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
-.search-bar #controller-img:hover {
+
+#controller-img:hover {
   cursor: pointer;
   background: lightgrey;
   box-shadow: 0px 0 0 4px lightgrey;
   border-radius: 6px;
 }
 
-.search-bar #xmen {
-  position: absolute;
+#xmen {
   transition: 0.5s;
   border-radius: 16px;
   width: 28px;
@@ -174,7 +145,7 @@ body {
   display: none;
 }
 
-.search-bar #xmen:hover {
+#xmen:hover {
   background-color: lightgray;
   border-radius: 15px;
   cursor: pointer;
@@ -193,7 +164,7 @@ body {
 /* categorizing column */
 .sort {
   position: absolute;
-  top: 130px;
+  top: 5rem;
   left: 50%;
   font-size: 18px;
   margin: auto;
@@ -212,12 +183,46 @@ body {
 }
 
 .posts {
-  position: relative;
-  left: 24%;
-  top: 170px;
-  width: 50%;
-  min-height: 100%;
-  padding-bottom: 30px;
+  box-sizing: border-box;
+  width: 50vw;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  padding-top: 8rem;
+  gap: 2rem;
+}
+.posts > * {
+  max-width: calc(195% - 40px);
+}
+
+.gen {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  border: 1px solid grey;
+  border-radius: 4px;
+  line-height: 1.1rem;
+  height: 11.2rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.poster {
+  object-fit: cover;
+  height: 11.4rem;
+}
+.gen-comment {
+  padding: 20px;
+}
+.comment {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-variant: small-caps;
 }
 
 .gen:hover {
@@ -233,41 +238,12 @@ body {
   transition: 0.4s;
 }
 
-.gen {
-  display: flex;
-  border: 1px solid grey;
-  border-radius: 4px;
-  text-align: justify;
-  height: 170px;
-  margin-bottom: 25px;
-}
-
-.gen-comment {
-  padding: 15px;
-  /* hide the text when it overflows */
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.comment {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  font-variant: small-caps;
-}
-
 a {
   text-decoration: none;
   color: black;
-  /* padding: 10px; */
 }
 a:focus {
   color: black;
-}
-
-.poster {
-  width: 300px;
-  height: 100%;
-  float: left;
 }
 
 ::-webkit-scrollbar {
@@ -282,10 +258,8 @@ a:focus {
 }
 
 .gow {
-  /* position: fixed; */
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
 }
 
 .background {
@@ -327,14 +301,4 @@ a:focus {
   top: 128%;
   left: 50%;
   padding: 10px;
-}
-
-.combat video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 35%;
-  top: 90%;
-  padding: 40px;
 }
