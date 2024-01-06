@@ -1,0 +1,115 @@
+* {
+  font-family: sans-serif;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.credential-div:nth-child(5) {
+  width: 10rem;
+  text-align: center;
+}
+
+#submit {
+  font-size: 25px;
+  background-color: whitesmoke;
+  padding: 5px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+#submit:hover {
+  box-shadow: 0 0 10px #3498db, 0 0 20px #3498db, 0 0 30px #3498db;
+}
+
+body::before {
+  content: "";
+  background-image: url(https://i.pinimg.com/originals/88/5e/fd/885efdc9b9954df0e50e3f16ecacd4a4.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+}
+
+.container {
+  padding-bottom: 10px;
+  background-color: rgba(12, 12, 12, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(56, 55, 61, 0.6);
+  border: 1px solid black;
+  position: absolute;
+  margin: 0 auto;
+  height: 35rem;
+  width: 30rem;
+}
+
+h1 {
+  font-size: 3.5rem;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.form-field {
+  color: whitesmoke;
+}
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-field {
+  border-radius: 15px;
+  outline: none;
+  padding: 15px;
+  color: whitesmoke;
+  background-color: rgb(12, 12, 12);
+  font-size: 20px;
+}
+
+.form {
+  /* text-align: center; */
+  align-items: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 100%;
+}
+
+form > .credential-div {
+  margin-top: 20px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(12, 12, 12) inset;
+  -webkit-text-fill-color: whitesmoke !important;
+}
+
+input:-webkit-autofill:hover {
+  font-size: 20px !important;
+}

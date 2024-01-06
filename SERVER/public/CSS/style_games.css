@@ -1,0 +1,522 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  /* container stays on top when scrolling down */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: black;
+  height: 2em;
+  min-height: 3.8em;
+  width: 100%;
+}
+
+.game-desrc {
+  border: none;
+  background-color: black;
+  padding: 5px;
+  font-size: 18px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0;
+  transition: 1s ease;
+}
+.gen:hover .game-desrc {
+  opacity: 1;
+}
+
+#return {
+  display: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#return:hover {
+  transform: scale(1.1);
+}
+
+.return-btn {
+  border: none;
+  width: auto;
+  background-color: black;
+}
+
+#back {
+  width: auto;
+  margin-left: 10px;
+  color: white;
+  text-wrap: nowrap;
+}
+#back a {
+  text-decoration: underline;
+  color: rgb(188, 132, 27);
+}
+
+.main {
+  background-image: url(../images/ac.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+/* logos of game industries */
+.logos {
+  transition: gap 0.2s ease;
+}
+.logos #ps:hover {
+  transform: scale(1.3);
+}
+.logos img {
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.logos:hover img {
+  cursor: pointer;
+}
+
+.logos #xbox:hover {
+  transform: scale(1.3);
+}
+
+.logos #nintendo:hover {
+  transform: scale(1.3);
+}
+#ps {
+  height: 35px;
+}
+#xbox {
+  height: 35px;
+}
+.logos #pc:hover {
+  transform: scale(1.3);
+}
+/*end of logos  */
+
+/* sign in/up part */
+.login {
+  position: relative;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  bottom: 2px;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+
+#sign-up::after,
+#sign-in::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: whitesmoke;
+  transition: width 0.4s ease;
+}
+
+#sign-up::after {
+  top: 38px;
+  left: 0;
+}
+
+#sign-in::after {
+  bottom: 23px;
+  right: 0;
+}
+
+.login:hover #sign-up::after,
+.login:hover #sign-in::after {
+  width: 100%;
+}
+
+.search-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+/* end of sign-in/up */
+
+/* drop menu for cellphones */
+.dropdown {
+  display: none !important;
+  position: relative;
+  top: 0px;
+  margin-right: auto;
+}
+.dropbtn {
+  background-color: grey;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  width: 4em;
+  border-radius: 10px;
+}
+.dropbtn img {
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown-content {
+  text-align: center;
+  display: none;
+  position: absolute;
+  background-color: black;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: auto;
+  transform: translateX(-28%);
+  font-size: 18px;
+}
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.dropdown-content a {
+  line-height: 30px;
+  padding: 0px 10px;
+}
+
+.dropdown-content li:hover {
+  background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: rgb(99, 96, 96);
+}
+
+#sign {
+  display: none;
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+  gap: 2.4rem;
+  height: 2.4em;
+}
+.search-container {
+  position: relative;
+  margin-top: -10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+#bar {
+  width: 30vw;
+  margin-top: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  border-radius: 18px;
+  height: 38px;
+  padding: 4px 65px 4px 20px;
+  font-size: 18px;
+  transition: padding 0.07s, height 0.2s ease;
+  box-sizing: border-box;
+}
+
+#controller-img {
+  position: absolute;
+  transition: 0.5s;
+  height: 20px;
+  top: 22px;
+  right: 6px;
+}
+
+#controller-img:hover {
+  cursor: pointer;
+  background: lightgrey;
+  box-shadow: 0px 0 0 4px lightgrey;
+  border-radius: 6px;
+}
+
+/* this is for removing the default "x" icon */
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+#xicon {
+  position: absolute;
+  border-radius: 16px;
+  width: 28px;
+  height: 28px;
+  right: 3px;
+  padding: 0;
+  top: 16px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.1s ease, 0.5s;
+}
+
+#xicon:hover {
+  background-color: lightgray;
+  border-radius: 15px;
+  cursor: pointer;
+}
+/* end of search bar */
+
+/* categorizing column */
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5px;
+  position: absolute;
+  color: rgb(76, 23, 23);
+  top: 130px;
+  left: 50%;
+  font-size: 26px;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  font-style: italic;
+  font-weight: bolder;
+  text-wrap: nowrap;
+}
+
+#list {
+  font-size: 16px;
+  color: rgb(244, 240, 240);
+  width: 1.3em;
+  background: rgb(29, 27, 26);
+  transition: width 0.4s ease;
+  cursor: pointer;
+}
+
+#list.expanded {
+  width: 8em;
+}
+
+#list:hover:not(.expanded),
+#list:focus:not(.expanded) {
+  width: 8em;
+}
+
+.posts {
+  position: absolute;
+  top: 170px;
+  width: 55em;
+  max-width: calc(95% - 40px);
+  padding-bottom: 30px;
+}
+
+.gen:hover {
+  filter: grayscale(1);
+  transition: 0.4s;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.gen:not(:hover) {
+  filter: grayscale(0);
+  transition: 0.4s;
+}
+
+.gen {
+  /* min-width: 400px; */
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  border-radius: 0px 10px 10px 0px;
+  height: 10.6em;
+  margin-bottom: 25px;
+}
+
+.gen-comment {
+  padding: 10px 0 0 12px;
+  background-color: rgba(38, 24, 24, 0.7);
+  /* hide the text when it overflows */
+  overflow: hidden;
+}
+
+.gen-img {
+  position: relative;
+}
+
+.comment {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-variant: small-caps;
+  line-height: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(236, 228, 228);
+}
+
+.poster {
+  width: 19em;
+  height: 100%;
+  float: left;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+@media (max-width: 1110px) {
+  .logos {
+    transition: gap 0.2s ease;
+    gap: 1em;
+  }
+}
+
+@media (max-width: 973px) {
+  #return {
+    display: block;
+    width: 50px;
+  }
+  .return-btn {
+    width: 20em;
+  }
+  #back {
+    display: none;
+  }
+  .login {
+    margin-left: 15px;
+    font-size: 1.5em;
+  }
+  #sign-up::after {
+    height: 0.05em;
+    top: 49px;
+    left: 0;
+  }
+  #sign-in::after {
+    height: 0.09em;
+    bottom: 30px;
+    right: 0;
+  }
+  .logos {
+    display: none;
+  }
+  .dropdown {
+    display: block !important;
+  }
+}
+
+@media (max-width: 935px) {
+  #bar {
+    width: 280px;
+  }
+}
+@media (max-width: 519px) {
+  #back {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .logos {
+    display: none;
+  }
+  .login {
+    display: none;
+  }
+  #back {
+    display: none;
+  }
+  .container {
+    height: auto;
+  }
+
+  #sign {
+    display: block;
+    text-wrap: nowrap;
+    background-color: whitesmoke;
+  }
+  #sign a {
+    color: black;
+  }
+  #sign-up::after {
+    top: 22px;
+    left: 0;
+    height: 0.1em;
+  }
+  #sign-in::after {
+    display: none;
+  }
+  #bar {
+    width: 60vw;
+    font-size: 16px;
+    padding-left: 18px;
+    height: 2.1em;
+  }
+  .dropdown-content {
+    transform: translateX(-60%);
+    font-size: 16px;
+  }
+  .return-btn {
+    width: auto;
+  }
+}
+/* cell view */
+@media (max-width: 460px) {
+  .poster {
+    width: 100%;
+    height: 100%;
+  }
+  .gen {
+    border-radius: 0 0 10px 10px;
+    height: 20em;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+  .gen-comment {
+    padding: 2%;
+  }
+  .sort {
+    font-size: 27px;
+    flex-direction: column;
+    top: 4em;
+  }
+  #list {
+    font-size: 16px;
+    margin: 0 auto;
+    padding: 7px 7px 7px 0;
+    width: 8.3em;
+  }
+}
+
+@media (max-width: 295px) {
+  #bar {
+    width: 165px;
+  }
+}
