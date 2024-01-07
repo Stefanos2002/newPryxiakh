@@ -67,9 +67,10 @@ body {
 }
 
 .main {
-  background-image: url(../images/ac.jpg);
+  background-image: url("	https://wallpapercosmos.com/w/full/1/6/b/6644-3840x2160-desktop-4k-assassins-creed-background.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   height: 100%;
   width: 100%;
